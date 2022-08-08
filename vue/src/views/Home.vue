@@ -4,11 +4,14 @@
 
     <p>{{this.quote}}</p>
     <p>Welcome {{this.$store.state.user.username}}</p>
+    
     <motivation-component />
+    <help-component/>
   </div>
 </template>
 
 <script>
+import HelpComponent from '../components/HelpComponent.vue';
 
 import MotivationComponent from '../components/MotivationComponent.vue'
 
@@ -16,7 +19,10 @@ export default {
   name: "home",
 
   components: {
-      MotivationComponent
+      MotivationComponent,
+      HelpComponent
   }
 };
 </script>
+
+    HelpComponent
