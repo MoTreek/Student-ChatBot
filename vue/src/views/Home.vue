@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home </h1>
-    <p>Welcome {{this.$store.state.user.username}}</p>
+    <p>Hello {{this.$store.state.user.username}}</p>
   </div>
 </template>
 
