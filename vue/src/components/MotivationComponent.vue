@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>
-            {{quote}}
+            {{quote.quote}} {{quote.person}}
         </h2>
 
     </div>
@@ -9,7 +9,7 @@
 
 <script>
 
-import MotivationQuotes from '../src/services/MotivationQuote'
+import MotivationQuotes from '../services/MotivationQuote'
 
 export default {
     data () {
@@ -19,7 +19,7 @@ export default {
     },
 
     created() {MotivationQuotes.getQuotes().then(response => {
-      this.quote = response;
+      this.quote = response.data;
     })
     
     }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-  baseURL: "https://motivational-quote-api.herokuapp.com/"
+  baseURL: "https://motivational-quote-api.herokuapp.com"
 });
 
 export default {
