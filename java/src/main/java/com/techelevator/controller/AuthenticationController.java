@@ -63,6 +63,11 @@ public class AuthenticationController {
         }
     }
 
+
+//    @RequestMapping(value = "/username", method = RequestMethod.GET)
+//    public void
+
+
     /**
      * Object to return as body in JWT Authentication.
      */
