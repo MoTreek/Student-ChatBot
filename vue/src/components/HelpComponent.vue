@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id= "help">
         <form>
             <!--   v-on:click='getHelp' -->
             <input type = "text" v-model='userInput' @keyup.enter="getHelp()" />
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -35,6 +36,6 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 </style>
