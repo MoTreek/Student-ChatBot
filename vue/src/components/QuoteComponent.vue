@@ -1,7 +1,7 @@
 <template>
     <div class="QCS">
         <h2>
-            {{quote.quote}} {{quote.person}}
+           " {{quote.quote}} " {{quote.person}}
         </h2>
 
     </div>
@@ -30,5 +30,6 @@ export default {
 <style>
 div.QCS{
     font-style: italic;
+    color: rgb(216, 236, 252);
 }
 </style>

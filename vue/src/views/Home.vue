@@ -10,6 +10,7 @@
         <h1 id="Quote">{{ this.quote }}</h1>
         <quote-component />
         <help-component />
+        <chat-box/>
       </div>
 
       
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import ChatBox from '../components/ChatBox.vue';
 import HelpComponent from "../components/HelpComponent.vue";
 
 import QuoteComponent from "../components/QuoteComponent.vue";
@@ -29,6 +31,7 @@ export default {
   components: {
     QuoteComponent,
     HelpComponent,
+    ChatBox,
   },
 };
 </script>
@@ -49,14 +52,10 @@ body.background {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #A7DBD8;
+  background-color: #A7DBD8; 
 }
   
-
-
-
-
-.MainBox {
+  .MainBox {
   background-color: #69d2e7;
   border-color: #a7dbd8;
   border-radius: 25px;
