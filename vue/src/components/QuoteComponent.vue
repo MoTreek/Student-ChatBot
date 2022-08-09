@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="QCS">
         <h2>
             {{quote.quote}} {{quote.person}}
         </h2>
@@ -9,7 +9,7 @@
 
 <script>
 
-import MotivationQuotes from '../services/MotivationQuote'
+import QuoteService from '../services/QuoteService'
 
 export default {
     data () {
@@ -18,7 +18,7 @@ export default {
         }
     },
 
-    created() {MotivationQuotes.getQuotes().then(response => {
+    created() {QuoteService.getQuotes().then(response => {
       this.quote = response.data;
     })
     
@@ -26,3 +26,9 @@ export default {
     
 }
 </script>
+
+<style>
+div.QCS{
+    font-style: italic;
+}
+</style>
