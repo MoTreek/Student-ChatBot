@@ -40,6 +40,7 @@ export default {
 <style scoped>
 input[type="text"] {
   background-color: #A7DBD8;
+  color: white;
   border: 10px solid #E0E4CC;
   border: #69d2e7;
   border-radius: 10px;
