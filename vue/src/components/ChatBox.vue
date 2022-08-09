@@ -37,10 +37,10 @@
 export default {
   name: 'ChatBox',
   data: () => ({
-    userInput: '',
-    helpString:
-        "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
-      isHelpStringNeeded: false,
+    // userInput: '',
+    // helpString:
+    //     "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
+    //   isHelpStringNeeded: false,
     message: '',
     messages: []
   }),
@@ -162,8 +162,6 @@ export default {
     border-bottom-right-radius: 3px;
   }
 
-  .help-needed {
-
-  }
+ 
 
 </style>
