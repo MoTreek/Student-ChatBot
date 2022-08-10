@@ -30,6 +30,6 @@ export default {
 <style>
 div.QCS{
     font-style: italic;
-    color: rgb(216, 236, 252);
+    color: white;
 }
 </style>

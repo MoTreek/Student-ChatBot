@@ -9,7 +9,7 @@
         <h1 id="Welcome">Welcome {{ this.$store.state.user.username }}</h1>
         <h1 id="Quote">{{ this.quote }}</h1>
         <quote-component />
-        <help-component />
+        <!-- <help-component /> -->
         <chat-box/>
       </div>
 
@@ -20,7 +20,7 @@
 
 <script>
 import ChatBox from '../components/ChatBox.vue';
-import HelpComponent from "../components/HelpComponent.vue";
+// import HelpComponent from "../components/HelpComponent.vue";
 
 import QuoteComponent from "../components/QuoteComponent.vue";
 
@@ -30,7 +30,7 @@ export default {
 
   components: {
     QuoteComponent,
-    HelpComponent,
+    // HelpComponent,
     ChatBox,
   },
 };
@@ -38,6 +38,11 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+h1 {
+  color: white;
+  
+}
 
 body.background {
   background-color: #69d2e7;
