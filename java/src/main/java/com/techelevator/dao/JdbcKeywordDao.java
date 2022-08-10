@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Keyword;
+import com.techelevator.model.UserNotFoundException;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -31,17 +32,32 @@ public class JdbcKeywordDao implements KeywordDao{
 
     @Override
     public Keyword getKeywordById(int keywordId) {
-        return null;
+        Keyword key = new Keyword();
+        String sql = "SELECT * FROM keyword WHERE keyword_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, keywordId);
+        if (results.next()) {
+            key = mapRowToKeyword(results);
+
+        }
+        return key;
     }
 
     @Override
     public Keyword findKeywordByDescription(String keyword_description) {
-        return null;
+        Keyword key = new Keyword();
+        String sql = "SELECT * FROM keyword WHERE keyword_description ILIKE '%' || ? || '%'";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, keyword_description);
+        if (results.next()) {
+            key = mapRowToKeyword(results);
+
+        }
+        return key;
     }
 
     @Override
     public boolean create(int keywordId, String keyword_description) {
         return false;
+//        Gonna Hold Off Until Im Sure We Need This Function
     }
 
     public Keyword mapRowToKeyword(SqlRowSet rs) {
