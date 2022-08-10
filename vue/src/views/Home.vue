@@ -6,7 +6,7 @@
   
 
       <div class="MainBox">
-        <h1 id="Welcome">Welcome {{ this.$store.state.user.username }}</h1>
+        <h1 id="Welcome">Welcome to Betta Bot, {{ this.$store.state.user.username }}</h1>
         <h1 id="Quote">{{ this.quote }}</h1>
         <quote-component />
         <!-- <help-component /> -->
@@ -57,11 +57,11 @@ body.background {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #A7DBD8; 
+  background-image: linear-gradient(#dcf0ef, rgb(213, 214, 216)); 
 }
   
   .MainBox {
-  background-color: #69d2e7;
+  background-image: linear-gradient(#A7DBD8, rgb(95, 136, 182)); 
   border-color: #a7dbd8;
   border-radius: 25px;
   text-align: center;

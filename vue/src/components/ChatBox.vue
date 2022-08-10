@@ -4,6 +4,10 @@
         <div class="DivToScroll">
             <!-- <div class = DivWithScroll> -->
 
+        <!-- <div>
+          {{ this.keywords }};
+        </div> -->
+
         <div class = "buttons" v-if="!clicked">
           <div class = "button-one">
               <button v-on:click="onButtonClick()" @click="clicked = !clicked" > What is MVC?
@@ -44,7 +48,7 @@
         v-model="message"
         @keyup.enter="sendMessage"
       />
-      <button @click="sendMessage">Send</button>
+      <button @click="sendMessage" >Send</button>
       <!-- </div> -->
     </div>
     </div>
@@ -52,6 +56,11 @@
 </template>
 
 <script>
+
+import ChatBotService from '../services/ChatBotService';
+
+
+
 export default {
   name: 'ChatBox',
   data: () => ({
@@ -61,6 +70,8 @@ export default {
     //   isHelpStringNeeded: false,
     message: '',
     messages: [],
+    keywords: [],
+    sql: [],
     clicked: false,
     mvc : "mvc is model view controller",
     
@@ -80,12 +91,23 @@ export default {
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
           author: 'server'
         })
+
+        
       } else {
+        let arr = this.message.split(' ');
+          if(arr.includes("Sql")){
         this.message = ''
         this.messages.push({
-        text: "Welcome",
+        text: ChatBotService.getSql().then(response => {
+          return response.data
+        }),
         author: 'server'
-      })
+          } 
+        
+       
+      
+      )
+      }
       }
 
       //this.message = ''
@@ -115,6 +137,14 @@ export default {
   },
 
 
+},
+    created() {
+      ChatBotService.getKeywords().then(response => {
+      this.keywords = response.data;
+  }),
+    ChatBotService.getSql().then(response => {
+      this.sql = response.data;
+    })
 }
 }
 
@@ -133,11 +163,11 @@ export default {
 }
 .chat-box-list-container {
   height: 100vh;
-  overflow: auto;
+  overflow: scroll;
   margin-bottom: 1px;
 }
 .chat-box-list {
-  height: 32vh;
+  height: 100vh;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -188,8 +218,8 @@ export default {
 .chat-box {
   margin: 10px;
   border: 1px solid #999;
-  width: 50vw;
-  height: 50vh;
+  width: 60vw;
+  height: 70vh;
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
@@ -199,6 +229,8 @@ export default {
 
 .chat-inputs {
   display: flex;
+  border: 2px solid rgb(233, 233, 233);
+  
   
 }
   
@@ -217,25 +249,31 @@ export default {
   .chat-inputs button {
     width: 145px;
     color: white;
-    background: #0070C8;
-    border-color: #999;
+    background: linear-gradient(rgb(169, 196, 230), rgb(111, 128, 173));
+    border-color: rgb(243, 242, 242);
     border-bottom: none;
     border-right:none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     border-bottom-right-radius: 3px;
+    font-family: "Quicksand", sans-serif;
   }
 
   .buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1;
     padding: 10px;
 
   }
 
   .buttons button {
-    color: rgb(255, 136, 0);
-    border: 2px solid rgb(255, 136, 0);
+    background: linear-gradient(rgb(255, 244, 221), rgb(247, 191, 88));
+    color: black;
+    border: 2px solid rgb(243, 234, 224);
     font-family: "Quicksand", sans-serif;
+    padding: 10px;
+    cursor: pointer;
 
   }
 
