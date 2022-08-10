@@ -3,7 +3,21 @@
     <div class="chat-box-list-container" ref="chatbox">
         <div class="DivToScroll">
             <!-- <div class = DivWithScroll> -->
+
+        <div class = buttons v-if="!clicked">
+              <button v-on:click="onButtonClick()" @click="clicked = !clicked" > What is MVC?
+                </button>
+
+                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> Find job postings.
+                </button>
+
+                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> How to write a resume. 
+                  </button>
+          </div>
+
       <ul class="chat-box-list">
+
+
         <li
           class="message"
           v-for="(message, idx) in messages"
@@ -14,8 +28,9 @@
           <p>
             <span >{{ message.text }}</span>
           </p>
-<!-- 
-          <div class="help-needed" v-if="isHelpStringNeeded === true">{{ this.helpString }}</div> -->
+
+
+
               
 
         </li>
@@ -43,7 +58,10 @@ export default {
     //     "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
     //   isHelpStringNeeded: false,
     message: '',
-    messages: []
+    messages: [],
+    clicked: false,
+    mvc : "mvc is model view controller",
+    
   }),
 
   methods: {
@@ -84,9 +102,20 @@ export default {
         //   this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
         // })
       //})
-    }
-  }
+    },
+    onButtonClick() {
+    this.message = ''
+        this.messages.push({
+          text: 'mvc is when ',
+          author: 'server'
+        })
+        this.button.style.display="none"
+  },
+
+
 }
+}
+
 </script>
 
 <style scoped>
@@ -97,10 +126,12 @@ export default {
   list-style-type: none;
 }
 .chat-box-list-container {
-  overflow: scroll;
+  height: 100vh;
+  overflow: auto;
   margin-bottom: 1px;
 }
 .chat-box-list {
+  height: 40vh;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -111,12 +142,12 @@ export default {
   }
   
 .chat-box-list .server p span {
-      background: #99cc00;
+      background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
     }
     
   .chat-box-list .server p {
       display: flex;
-      float: right;
+      float: left;
     }
   
   .chat-box-list .client p span {
@@ -125,7 +156,7 @@ export default {
 
     .chat-box-list .client p {
       display: flex;
-      float: left;
+      float: right;
     }
 
     
@@ -159,6 +190,7 @@ export default {
   align-items: space-between;
   justify-content: space-between;
 }
+
 .chat-inputs {
   display: flex;
   
@@ -167,6 +199,7 @@ export default {
     .chat-inputs input {
     line-height: 3;
     width: 100%;
+    height: auto;
     border: 1px solid #999;
     border-left: none;
     border-bottom: none;
