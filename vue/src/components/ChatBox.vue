@@ -52,17 +52,37 @@ export default {
         text: message,
         author: 'client'
       })
-      this.message = ''
-      this.$axios.get(`https://motivational-quote-api.herokuapp.com/random/quote=${message}`)
-      .then(res => {
+
+      if (this.message.toLowerCase().includes("help")) {
+        this.message = ''
         this.messages.push({
-          text: res.data.output,
+          text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
           author: 'server'
         })
+      } else {
+        this.message = ''
+        this.messages.push({
+        text: "Welcome",
+        author: 'server'
+      })
+      }
+
+      //this.message = ''
+      //this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${message}`)
+
+      // this.messages.push({
+      //   text: "Welcome",
+      //   author: 'server'
+      // })
+      // .then(res => {
+      //   this.messages.push({
+      //     text: res.data.output,
+      //     author: 'server'
+      //   })
         // this.$nextTick(() => {
         //   this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
         // })
-      })
+      //})
     }
   }
 }
