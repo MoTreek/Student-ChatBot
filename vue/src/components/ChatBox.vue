@@ -10,6 +10,7 @@
           :key="idx"
           :class="message.author"
         >
+
           <p>
             <span >{{ message.text }}</span>
           </p>
@@ -105,23 +106,25 @@ export default {
 }
  .chat-box-list span {
     padding: 8px;
-    color: black;
+    color:white;
     border-radius: 4px;
   }
   
-  .chat-box-list.server span {
+.chat-box-list .server p span {
       background: #99cc00;
     }
     
-    .chat-box-list.server p {
+  .chat-box-list .server p {
+      display: flex;
       float: right;
     }
   
-  .chat-box-list.client span {
+  .chat-box-list .client p span {
       background: #0070C8;
     }
 
-    .chat-box-list.client p {
+    .chat-box-list .client p {
+      display: flex;
       float: left;
     }
 
