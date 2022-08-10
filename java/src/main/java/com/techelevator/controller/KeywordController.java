@@ -3,12 +3,14 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.KeywordDao;
 import com.techelevator.model.Keyword;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class KeywordController {
     private KeywordDao keywordDao;
