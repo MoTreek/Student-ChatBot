@@ -4,9 +4,11 @@
         <div class="DivToScroll">
             <!-- <div class = DivWithScroll> -->
 
-        <div class = buttons v-if="!clicked">
+        <div class = "buttons" v-if="!clicked">
+          <div class = "button-one">
               <button v-on:click="onButtonClick()" @click="clicked = !clicked" > What is MVC?
                 </button>
+                </div>
 
                 <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> Find job postings.
                 </button>
@@ -119,6 +121,10 @@ export default {
 </script>
 
 <style scoped>
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+
 .chat-box,
 .chat-box-list {
   display: flex;
@@ -131,7 +137,7 @@ export default {
   margin-bottom: 1px;
 }
 .chat-box-list {
-  height: 40vh;
+  height: 32vh;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -216,6 +222,21 @@ export default {
     border-bottom: none;
     border-right:none;
     border-bottom-right-radius: 3px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+
+  }
+
+  .buttons button {
+    color: rgb(255, 136, 0);
+    border: 2px solid rgb(255, 136, 0);
+    font-family: "Quicksand", sans-serif;
+
   }
 
  
