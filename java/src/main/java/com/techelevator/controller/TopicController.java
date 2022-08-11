@@ -24,15 +24,15 @@ public class TopicController {
 
 
 
-    @RequestMapping(path= "/{keyword_description}", method = RequestMethod.GET)
-    public Topic getVideo (@PathVariable String keyword_description) {return dao.findVideobyKeyword(keyword_description);}
+    @RequestMapping(path= "/video/{keyword_description}", method = RequestMethod.GET)
+    public String getVideo (@PathVariable String keyword_description) {return dao.findVideobyKeyword(keyword_description);}
 
-//    @RequestMapping(path= "/{keywordDescription}/text", method = RequestMethod.GET)
-//    public Topic getText (@PathVariable String keywordDescription) {return dao.findTextRefbyKeyword(keywordDescription);}
-//
-//    @RequestMapping(path= "/web/{keywordDescription}/website", method = RequestMethod.GET)
-//    public Topic getWebsite (@PathVariable String keywordDescription) {return dao. findWebsiteRefbyKeyword(keywordDescription);}
-//
+    @RequestMapping(path= "/text/{keywordDescription}", method = RequestMethod.GET)
+    public String getText (@PathVariable String keywordDescription) {return dao.findTextRefbyKeyword(keywordDescription);}
+
+    @RequestMapping(path= "/web/{keywordDescription}", method = RequestMethod.GET)
+    public String getWebsite (@PathVariable String keywordDescription) {return dao. findWebsiteRefbyKeyword(keywordDescription);}
+
 
 
 }

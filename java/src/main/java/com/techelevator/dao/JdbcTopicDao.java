@@ -33,88 +33,46 @@ public class JdbcTopicDao implements TopicDao {
         }
 
     @Override
-    public Topic findVideobyKeyword(String keyword_description) {
-        {
-            Topic topic = new Topic();
+    public String findVideobyKeyword(String keyword_description) {
+
 
             String sql = "SELECT videoref FROM topic " +
                     "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id " +
                     "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
-                    "WHERE keyword.keyword_description ILIKE '%' || ? || '%'";
+                    "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
 
-            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, keyword_description);
+            String result = jdbcTemplate.queryForObject(sql, String.class, keyword_description);
 
-            while (result.next()) {
-                topic = mapRowSetToTopic(result);
-            }
-            return topic;
-        }    }
+
+            return result;
+        }
 
     @Override
-    public Topic findTextRefbyKeyword(String keywordDescription) {
-        {
-            Topic topic  = new Topic();
+    public String findTextRefbyKeyword(String keywordDescription) {
 
-            String sql = "SELECT topic.TextRef FROM topic" +
-                    "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id" +
-                    "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id" +
-                    "WHERE keyword.keyword_description = ILIKE '%' || ? || '%';";
+        String sql = "SELECT textref FROM topic " +
+                "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id " +
+                "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
+                "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
 
-            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, keywordDescription);
+        String result = jdbcTemplate.queryForObject(sql, String.class, keywordDescription);
 
-            while (result.next()) {
-                topic = mapRowSetToTopic(result);
-            }
-            return topic;
-        }    }
+
+        return result;
+    }
 
     @Override
-    public Topic findWebsiteRefbyKeyword(String keywordDescription) {
-        {
-            Topic topic = new Topic();
+    public String findWebsiteRefbyKeyword(String keywordDescription) {
+        String sql = "SELECT webref FROM topic " +
+                "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id " +
+                "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
+                "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
 
-            String sql = "SELECT topic.WebRef FROM topic" +
-                    "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id" +
-                    "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id" +
-                    "WHERE keyword.keyword_description = ILIKE '%' || ? || '%';";
+        String result = jdbcTemplate.queryForObject(sql, String.class, keywordDescription);
 
-            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, keywordDescription);
 
-            while (result.next()) {
-                topic = mapRowSetToTopic(result);
-            }
-            return topic;
-
-        }    }
-
-    @Override
-    public List<Topic> getCurriculumHelp(String topicType) {
-        {
-            List<Topic> curriculumTopics = new ArrayList<Topic>();
-
-            String sql = "SELECT topic_type FROM topic WHERE topic_type = 'Curriculum';";
-
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, topicType);
-            while (results.next()) {
-                curriculumTopics.add(mapRowSetToTopic(results));
-            }
-            return curriculumTopics;
-        }    }
-
-    @Override
-    public List<Topic> getPathwayHelp(String topicType) {
-        {
-            List<Topic> pathwayTopics = new ArrayList<Topic>();
-
-            String sql= "SELECT topic_type FROM topic WHERE topic_type = 'Pathway';";
-
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, topicType);
-            while (results.next()) {
-                pathwayTopics.add(mapRowSetToTopic(results));
-            }
-            return pathwayTopics;
-        }    }
-
+        return result;
+    }
 
 
 
