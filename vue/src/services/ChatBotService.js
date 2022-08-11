@@ -10,6 +10,9 @@ export default {
     },
     getSql(){
         return http.get('/keywords/Sql')
+    },
+    getKeyword(keyword) {
+        return http.get(`/keywords/${keyword}`)
     }
 
 }
