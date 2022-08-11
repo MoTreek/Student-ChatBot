@@ -68,6 +68,7 @@ export default {
     // helpString:
     //     "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
     //   isHelpStringNeeded: false,
+    dif: '',
     message: '',
     messages: [],
     keywords: [],
@@ -94,21 +95,23 @@ export default {
 
         
       } else {
-        // let arr = this.message.split(' ');
-          // if(arr.includes("Sql")){
+        let arr = this.message.split(' ');
+          if(arr.includes("Sql")){
         this.message = ''
-         ChatBotService.getKeyword("sql").then(response => {
-        this.message = response.data.keywordDescription
-        })
+        
+        ChatBotService.getKeyword("sql").then(response => {
+        this.dif = response.data.keywordDescription
         this.messages.push({
-        text: message,
+        text: this.dif,
         author: 'server'
           } 
         
        
       
       )
-      // }
+        })
+        
+      }
       }
 
       //this.message = ''
