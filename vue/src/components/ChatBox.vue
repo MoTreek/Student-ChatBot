@@ -2,9 +2,8 @@
   <section class="chat-box">
     <div class="chat-box-list-container" ref="chatbox">
         <div class="DivToScroll">
-            
-
-        <!-- <div>
+<!-- 
+        <div>
           {{ this.keywords }};
         </div> -->
 
@@ -95,23 +94,37 @@ export default {
 
         
       } else {
-        let arr = this.message.split(' ');
-          if(arr.includes("Sql")){
+        let keywordArr = [];
+        for(let i = 0; i < this.keywords.length; i++) {
+          keywordArr.push(this.keywords[i].keywordDescription.toLowerCase())
+        }
+        // this.message = keywordArr;
+        let arr = this.message.toLowerCase().replace(/[.,/#!$%^?&*;:{}=\-_`~()]/g,"")
+.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+          const match = keywordArr.find(element => {
+            if (element.includes(arr[i])) {
+              return true;
+            }
+            else {
+              return false;
+            }
+          })
+          if(match){
         this.message = ''
         
-        ChatBotService.getKeyword("sql").then(response => {
+        ChatBotService.getKeyword(arr[i]).then(response => {
         this.dif = response.data.keywordDescription
         this.messages.push({
         text: this.dif,
         author: 'server'
-          } 
-        
-       
-      
-      )
+          })
         })
-        
+        break;
       }
+      
+        }
+          
       }
 
       //this.message = ''
