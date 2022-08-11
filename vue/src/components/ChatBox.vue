@@ -2,7 +2,7 @@
   <section class="chat-box">
     <div class="chat-box-list-container" ref="chatbox">
         <div class="DivToScroll">
-            <!-- <div class = DivWithScroll> -->
+            
 
         <!-- <div>
           {{ this.keywords }};
@@ -68,6 +68,7 @@ export default {
     // helpString:
     //     "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
     //   isHelpStringNeeded: false,
+    dif: '',
     message: '',
     messages: [],
     keywords: [],
@@ -97,16 +98,19 @@ export default {
         let arr = this.message.split(' ');
           if(arr.includes("Sql")){
         this.message = ''
+        
+        ChatBotService.getKeyword("sql").then(response => {
+        this.dif = response.data.keywordDescription
         this.messages.push({
-        text: ChatBotService.getSql().then(response => {
-          return response.data
-        }),
+        text: this.dif,
         author: 'server'
           } 
         
        
       
       )
+        })
+        
       }
       }
 
