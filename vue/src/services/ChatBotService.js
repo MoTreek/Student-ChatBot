@@ -13,6 +13,9 @@ export default {
     },
     getKeyword(keyword) {
         return http.get(`/keywords/${keyword}`)
+    },
+    getTopic(topic) {
+        return http.get(`/topic/${topic}`)
     }
 
 }

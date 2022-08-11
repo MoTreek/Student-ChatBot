@@ -111,6 +111,8 @@ export default {
             }
           })
           if(match){
+        this.promptForDisplayChoice()
+        this.selectDisplayChoice()
         this.message = ''
         
         ChatBotService.getKeyword(arr[i]).then(response => {
@@ -153,8 +155,32 @@ export default {
         this.button.style.display="none"
   },
 
+    promptForDisplayChoice() {
+    this.message = ''
+     this.messages.push({
+      text: 'Would you like the explanation to be a video, webpage, or short description?',
+      author: 'server'
+  })
+  },
 
-},
+  selectDisplayChoice() {
+    //  this.messages.push({
+    //     text: this.message,
+    //     author: 'client'
+    //   })
+      if (this.message.includes('video')) {
+        ChatBotService.getTopic('video').then(response => {
+        this.dif = response.data.video
+        this.messages.push({
+        text: this.dif,
+        author: 'server'
+      })
+        })
+      }
+  }
+  },
+
+  
     created() {
       ChatBotService.getKeywords().then(response => {
       this.keywords = response.data;
@@ -164,6 +190,7 @@ export default {
     })
 }
 }
+  
 
 </script>
 
