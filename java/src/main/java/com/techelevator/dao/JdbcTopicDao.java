@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 import com.techelevator.model.Topic;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -36,15 +37,32 @@ public class JdbcTopicDao implements TopicDao {
     public String findVideobyKeyword(String keyword_description) {
 
 
+
             String sql = "SELECT videoref FROM topic " +
                     "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id " +
                     "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
-                    "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
-
-            String result = jdbcTemplate.queryForObject(sql, String.class, keyword_description);
+                    "WHERE keyword.keyword_description ILIKE '%' || ? || '%';";
 
 
-            return result;
+             SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, keyword_description);
+
+             String closetMatch = null;
+             int distanceCompare = 10000;
+
+            while (rs.next()) {
+                LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
+                Integer distance = levenshteinDistance.apply(keyword_description, rs.getString("videoref"));
+
+                if (distanceCompare > distance) {
+                    distanceCompare = distance;
+                    closetMatch = rs.getString("videoref");
+                }
+
+            }
+
+
+
+            return closetMatch;
         }
 
     @Override
@@ -55,23 +73,51 @@ public class JdbcTopicDao implements TopicDao {
                 "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
                 "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
 
-        String result = jdbcTemplate.queryForObject(sql, String.class, keywordDescription);
+
+        SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, keywordDescription);
+
+        String closetMatch = null;
+        int distanceCompare = 10000;
+
+        while (rs.next()) {
+            LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
+            Integer distance = levenshteinDistance.apply(keywordDescription, rs.getString("textref"));
+
+            if (distanceCompare > distance) {
+                distanceCompare = distance;
+                closetMatch = rs.getString("textref");
+            }
 
 
-        return result;
+        }
+        return closetMatch;
     }
 
-    @Override
+
+        @Override
     public String findWebsiteRefbyKeyword(String keywordDescription) {
         String sql = "SELECT webref FROM topic " +
                 "JOIN keyword_topic ON keyword_topic.topic_id = topic.topic_id " +
                 "JOIN keyword ON keyword.keyword_id = keyword_topic.keyword_id " +
                 "WHERE keyword.keyword_description ILIKE '%' || ? || '%' LIMIT 1;";
 
-        String result = jdbcTemplate.queryForObject(sql, String.class, keywordDescription);
+            SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, keywordDescription);
+
+            String closetMatch = null;
+            int distanceCompare = 10000;
+
+            while (rs.next()) {
+                LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
+                Integer distance = levenshteinDistance.apply(keywordDescription, rs.getString("webref"));
+
+                if (distanceCompare > distance) {
+                    distanceCompare = distance;
+                    closetMatch = rs.getString("webref");
+                }
 
 
-        return result;
+            }
+            return closetMatch;
     }
 
 
