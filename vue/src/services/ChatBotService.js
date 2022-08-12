@@ -16,6 +16,9 @@ export default {
     },
     getTopic(topic) {
         return http.get(`/topic/${topic}`)
-    }
+    },
 
+    getVideoRef(keyword) {
+        return http.get(`topic/video/${keyword}`)
+    }
 }

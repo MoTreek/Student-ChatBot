@@ -169,8 +169,8 @@ export default {
     //     author: 'client'
     //   })
       if (this.message.includes('video')) {
-        ChatBotService.getTopic('video').then(response => {
-        this.dif = response.data.video
+        ChatBotService.getVideoRef(this.keyword).then(response => {
+        this.dif = response.data
         this.messages.push({
         text: this.dif,
         author: 'server'
