@@ -152,7 +152,7 @@ export default {
           author: 'server'
       })
       }
-      this.message = '';
+      this.message = ''  ;  
       
       //this.message = ''
       //this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${message}`)
@@ -199,25 +199,25 @@ export default {
     //   })
       if (type == 'video') {
         ChatBotService.getVideoRef(keyword).then(response => {
-        this.dif = response.data
+      
         this.messages.push({
-        text: this.dif,
+        text: response.data,
         author: 'server'
       })
         })
       } else if (type == 'text') {
         ChatBotService.getTextRef(keyword).then(response => {
-        this.dif = response.data
+        
         this.messages.push({
-        text: this.dif,
+        text: response.data,
         author: 'server'
       })
         })
       } else if (type == 'web') {
         ChatBotService.getWebRef(keyword).then(response => {
-        this.dif = response.data
+        
         this.messages.push({
-        text: this.dif,
+        text: response.data,
         author: 'server'
       })
         })
