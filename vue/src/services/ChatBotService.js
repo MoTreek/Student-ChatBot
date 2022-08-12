@@ -20,5 +20,11 @@ export default {
 
     getVideoRef(keyword) {
         return http.get(`topic/video/${keyword}`)
+    },
+    getTextRef(keyword) {
+        return http.get(`topic/text/${keyword}`)
+    },
+    getWebRef(keyword) {
+        return http.get(`topic/web/${keyword}`)
     }
 }
