@@ -44,7 +44,7 @@
     <div class="chat-inputs">
       <input
         type="text"
-        v-model="message"
+        v-model.lazy="message"
         @keyup.enter="sendMessage"
       />
       <button @click="sendMessage" >Send</button>
@@ -71,6 +71,7 @@ export default {
     message: '',
     messages: [],
     keywords: [],
+    keyword: 'oop',
     sql: [],
     clicked: false,
     mvc : "mvc is model view controller",
@@ -93,7 +94,15 @@ export default {
         })
 
         
-      } else {
+      } else if (this.message.toLowerCase().includes("video")){
+        this.selectDisplayChoice(this.dif, "video")
+      } else if (this.message.toLowerCase().includes("text") || this.message.toLowerCase().includes("description")) {
+        this.selectDisplayChoice(this.dif, "text")
+      } else if (this.message.toLowerCase().includes("web")) {
+        this.selectDisplayChoice(this.dif, "web")
+      }
+      
+      else {
         let keywordArr = [];
         for(let i = 0; i < this.keywords.length; i++) {
           keywordArr.push(this.keywords[i].keywordDescription.toLowerCase())
@@ -101,6 +110,7 @@ export default {
         // this.message = keywordArr;
         let arr = this.message.toLowerCase().replace(/[.,/#!$%^?&*;:{}=\-_`~()]/g,"")
 .split(' ');
+        let isFound = false;
         for (let i = 0; i < arr.length; i++) {
           const match = keywordArr.find(element => {
             if (element.includes(arr[i])) {
@@ -112,23 +122,38 @@ export default {
           })
           if(match){
         this.promptForDisplayChoice()
-        this.selectDisplayChoice()
+        // this.readUserInput()
+        // this.selectDisplayChoice("oop")
         this.message = ''
         
         ChatBotService.getKeyword(arr[i]).then(response => {
         this.dif = response.data.keywordDescription
-        this.messages.push({
-        text: this.dif,
-        author: 'server'
-          })
+       
+        // this.promptForDisplayChoice().addEventListener('keypress', function(e){
+        //   if (e.key === "Enter"){
+        //     this.selectDisplayChoice(this.dif)
+        //   }
+        // }),
+        // this.selectDisplayChoice(this.dif)
+
+        // this.messages.push({
+        // text: this.dif,
+        // author: 'server'
+        //   })
         })
+        isFound = true;
         break;
-      }
-      
-        }
+      } 
           
       }
-
+      if(isFound == false) {
+        this.messages.push({
+          text: "Hello, " + this.$store.state.user.username + " Please ask me a questions related to the tech elevator course. You can ask me 'What is sql injection?' for example",
+          author: 'server'
+      })
+      }
+      this.message = ''  ;  
+      
       //this.message = ''
       //this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${message}`)
 
@@ -145,7 +170,8 @@ export default {
         //   this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
         // })
       //})
-    },
+      }
+    },   
     onButtonClick() {
     this.message = ''
         this.messages.push({
@@ -162,17 +188,36 @@ export default {
       author: 'server'
   })
   },
+    readUserInput() {
+      setTimeout(this.selectDisplayChoice('oop'), 5000)
+    },
 
-  selectDisplayChoice() {
+  selectDisplayChoice(keyword, type) {
     //  this.messages.push({
     //     text: this.message,
     //     author: 'client'
     //   })
-      if (this.message.includes('video')) {
-        ChatBotService.getTopic('video').then(response => {
-        this.dif = response.data.video
+      if (type == 'video') {
+        ChatBotService.getVideoRef(keyword).then(response => {
+      
         this.messages.push({
-        text: this.dif,
+        text: response.data,
+        author: 'server'
+      })
+        })
+      } else if (type == 'text') {
+        ChatBotService.getTextRef(keyword).then(response => {
+        
+        this.messages.push({
+        text: response.data,
+        author: 'server'
+      })
+        })
+      } else if (type == 'web') {
+        ChatBotService.getWebRef(keyword).then(response => {
+        
+        this.messages.push({
+        text: response.data,
         author: 'server'
       })
         })
