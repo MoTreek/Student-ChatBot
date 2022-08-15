@@ -21,7 +21,9 @@
 
                   
           </div>
-<job-search-component v-if = "this.message == 'job'"/>
+          <div v-show="found"><!-- <div v-if="isVisible === true"> -->
+<job-search-component />
+</div>
       <ul class="chat-box-list">
 
 
@@ -60,21 +62,18 @@
 
 import ChatBotService from '../services/ChatBotService';
 import JobSearchComponent from './JobSearchComponent.vue';
-// import JobSearchComponent from '../components/JobSearchComponent.vue';
+
 
 
 
 export default {
   components: {
     JobSearchComponent
-    // JobSearchComponent,
+  
   },
   name: 'ChatBox',
   data: () => ({
-    // userInput: '',
-    // helpString:
-    //     "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
-    //   isHelpStringNeeded: false,
+
     dif: '',
     message: '',
     messages: [],
@@ -83,17 +82,31 @@ export default {
     sql: [],
     clicked: false,
     mvc : "mvc is model view controller",
+  isVisible: false,
+    found: false
     
   }),
 
+  computed: {
+    
+  },
+
   methods: {
+showJobs(){
+      if (this.message.includes('test')){
+          this.isVisible = true
+      } 
+       return this.isVisible;
+    },
     sendMessage() {
       const message = this.message
       this.messages.push({
         text: message,
         author: 'client'
       })
-
+      if (this.message.toLowerCase().includes("job")) {
+        this.found = true;
+      }
       if (this.message.toLowerCase().includes("help")) {
         this.message = ''
         this.messages.push({
