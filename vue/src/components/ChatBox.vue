@@ -214,7 +214,7 @@ showJobs(){
     onButtonClick() {
     this.message = ''
         this.messages.push({
-          text: 'mvc is when ',
+          text: 'MVC is Model–view–controller is a software architectural pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user.',
           author: 'server'
         })
         this.button.style.display="none"
