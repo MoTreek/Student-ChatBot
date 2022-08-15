@@ -18,8 +18,10 @@
 
                 <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> How to write a resume. 
                   </button>
-          </div>
 
+                  
+          </div>
+<job-search-component v-show: this.message = 'job'/>
       <ul class="chat-box-list">
 
 
@@ -57,10 +59,16 @@
 <script>
 
 import ChatBotService from '../services/ChatBotService';
+import JobSearchComponent from './JobSearchComponent.vue';
+// import JobSearchComponent from '../components/JobSearchComponent.vue';
 
 
 
 export default {
+  components: {
+    JobSearchComponent
+    // JobSearchComponent,
+  },
   name: 'ChatBox',
   data: () => ({
     // userInput: '',
@@ -90,6 +98,12 @@ export default {
         this.message = ''
         this.messages.push({
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
+          author: 'server'
+        })}
+        else if (this.message.toLowerCase().includes("job")) {
+        this.message = ''
+        this.messages.push({
+          // text: "Justin Credible",
           author: 'server'
         })
 
