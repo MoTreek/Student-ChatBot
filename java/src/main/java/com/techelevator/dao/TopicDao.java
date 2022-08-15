@@ -16,7 +16,7 @@ public interface TopicDao {
     public String findTextRefbyKeyword(String keyword_description);
 
     public String findWebsiteRefbyKeyword(String keyword_description);
-    
+
 
 }
 
