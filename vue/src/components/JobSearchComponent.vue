@@ -1,6 +1,7 @@
 <template>
   <div class="idk" >
     <div v-for="job in jobsLimited" v-bind:key="job.id">
+        
       <!-- <p v-html="job.contents" class="card"></p>
             <p v-html="job.name"></p>
             <p v-html="job.type"></p>

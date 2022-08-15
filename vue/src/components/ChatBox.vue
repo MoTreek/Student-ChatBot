@@ -57,11 +57,14 @@
 <script>
 
 import ChatBotService from '../services/ChatBotService';
-
+// import JobSearchComponent from '../components/JobSearchComponent.vue';
 
 
 export default {
   name: 'ChatBox',
+  components: {
+    // JobSearchComponent,
+  },
   data: () => ({
     // userInput: '',
     // helpString:
@@ -85,8 +88,14 @@ export default {
         text: message,
         author: 'client'
       })
-
-      if (this.message.toLowerCase().includes("help")) {
+    if (this.message.toLowerCase().includes("job")) {
+         this.message = ''
+        this.messages.push({
+         text: "Here are the options" + this.jobs,
+          author: 'server'
+        })
+    }
+      else if (this.message.toLowerCase().includes("help")) {
         this.message = ''
         this.messages.push({
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",

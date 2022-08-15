@@ -15,7 +15,7 @@ CREATE TABLE users (
 
 CREATE TABLE keyword (
 	
-    keyword_id integer NOT NULL,
+    keyword_id serial NOT NULL,
     keyword_description varchar NOT NULL,
 	
 	CONSTRAINT pk_keyword PRIMARY KEY (keyword_id)
@@ -24,7 +24,7 @@ CREATE TABLE keyword (
 
 CREATE TABLE topic (
 	
-    topic_id integer,
+    topic_id serial NOT NULL,
     VideoRef varchar,
     TextRef varchar,
 	WebRef varchar,
@@ -34,8 +34,8 @@ CREATE TABLE topic (
 );
 CREATE TABLE keyword_topic (
 	
-    keyword_id integer,
-    topic_id integer,
+    keyword_id serial NOT NULL,
+    topic_id serial NOT NULL,
    
 	FOREIGN KEY (topic_id) REFERENCES topic(topic_id),
 	FOREIGN KEY (keyword_id) REFERENCES keyword(keyword_id)

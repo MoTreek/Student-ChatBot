@@ -34,6 +34,7 @@ export default {
 
   components: {
     QuoteComponent,
+    // HelpComponent,
     ChatBox,
     JobSearchComponent,
   },
@@ -56,13 +57,13 @@ body.background {
   color: #69d2e7;
   background-color: #f0e6de;
 }
-.Main {
+/* .Main {
    display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-image: linear-gradient(#dcf0ef, rgb(213, 214, 216)); 
-}
+} */
   
   .MainBox {
   background-image: linear-gradient(#A7DBD8, rgb(95, 136, 182)); 
