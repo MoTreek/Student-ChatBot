@@ -23,7 +23,7 @@ public class QuestionsController {
 
 
     @RequestMapping(path="/questionType/{questionType}", method = RequestMethod.GET)
-    public Questions getQuestions (@PathVariable String questionType) {return dao.getQuestionsByType(questionType);}
+    public List<Questions> getQuestions (@PathVariable String questionType) {return dao.getQuestionsByType(questionType);}
 
 
     @RequestMapping(path="/answer/{questionId}", method = RequestMethod.GET)

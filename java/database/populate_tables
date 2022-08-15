@@ -38,7 +38,7 @@ VALUES
 (2, 'what is SQL injection?', 'SQL injection is the placement of malicious code in SQL statements, via web page input.', 'technical'),
 (3, 'what is dependency injection?', 'dependency injection is a design pattern in which an object or function receives other objects or functions that it depends on.', 'technical'),
 (4, 'Give an example of a time when you had to think on your feet.', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway'),
-(5, 'Tell me about a time you set a goal for yourself. How did you go about ensuring that you would meet your objective?', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway');
+(5, 'Tell me about a time you set a goal for yourself. How did you go about ensuring that you would meet your objective?', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway'),
 (6, 'Describe a time when you saw a problem and took the initiative to correct it.', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway');
 
 INSERT INTO keyword (keyword_id, keyword_description)
@@ -195,6 +195,165 @@ VALUES
     	,'REST is an acronym for Representational State Transfer and an architectural style for distributed hypermedia systems.'
     	,'https://www.codecademy.com/article/what-is-rest')
     	;
+		
+		
+
+
+
+INSERT INTO keyword (keyword_id, keyword_description)
+VALUES
+
+	(34, 'relational'),
+	
+	(35, 'sql'),
+	(36, 'commands'),
+	(37, 'symbols'),
+	(38, 'primary key'),
+	
+	
+	(39, 'foreign key'),
+	(40, 'cardinality'),
+	(41, 'constraint'),
+	
+	(42, 'transaction'),
+	
+	(43, 'commit'),
+	(44, 'rollback'),
+	(45, 'modeling'),
+	(46, 'building'),
+	(47, 'normalization'),
+	
+	(48, 'normal'),
+	
+	
+	(49, '2nf'),
+	(50, '3nf'),
+	(51, 'jdbc'),
+	(52, 'driver'),
+	(53, 'jdbctemplate'),
+	(54, 'dao'),
+	(55, 'integeration tests'),
+	(56, 'crud'),
+	
+	
+	
+	(57, 'hashing'),
+	(58, 'encryption'),
+	(59, 'url'),
+	(60, 'http'),
+	
+	(61, 'ip address'),
+	(62, 'dns'),
+	
+	(63, 'status codes'),
+	(64, 'api'),
+	(65, 'json'),
+	(66, 'deserialization'),
+	
+	(67, 'rest'),
+	(68, 'restful'),
+	(69, 'mvc'),
+	(70, 'model'),
+	(71, 'view'),
+	(72, 'controller'),
+	(73, 'spring boot'),
+	(74, 'spring mvc'),
+	(75, 'spring jdbc'),
+	(76, 'spring'),
+	(77, 'query string'),
+	(78, 'bean'),
+	(79, 'jwt'),
+	
+	(80, 'authentication'),
+	(81, 'authorization'),
+	(82, 'joins'),
+
+	
+	
+	(83, 'database'),
+	
+	(84, 'simple'),
+	(85, 'composite'),
+	
+	(86, 'constraints'),
+	
+	(87, 'transactions'),
+	
+	(88, 'normalizing'),
+	
+	(89, 'first'),
+	(90, '1nf'),
+	
+	(91, 'post'),
+	(92, 'update'),
+	(91, 'insert'),
+	
+	(92, 'https'),
+	
+	(93, 'domain name system'),
+	
+	(94, 'serialization'),
+	
+	(95, 'token'),
+	
+	
+INSERT INTO topic (topic_id, VideoRef, TextRef, WebRef, topic_type)
+VALUES
+	(34, 'https://www.youtube.com/watch?v=MiAl2mQ718s', 'A relational database consists of tables with columns, where each column has a name and data type.','https://cloud.google.com/learn/what-is-a-relational-database#:~:text=A%20relational%20database%20(RDB)%20is,relationship%20between%20various%20data%20points.', 'Curriculum' ),
+	(35, 'https://www.youtube.com/watch?v=27axs9dO7AE', 'Structured query language is declarative, defining what it wants from the computer. You can manipulate and create tables and columns using SQL.', 'https://www.techtarget.com/searchdatamanagement/definition/SQL#:~:text=Structured%20Query%20Language%20(SQL)%20is,on%20the%20data%20in%20them.', 'Curriculum'),
+	(36, 'https://www.youtube.com/watch?v=kbKty5ZVKMY&list=PLR0triVyTrBWOLNu3ato7Y9hnGVyhTe1c&index=2', 'SQL features several commands for manipulating databases. These include SELECT, AS, FROM, WHERE, AND, IS NULL, LIMIT, CREATE, DROP, UPDATE, DELETE, ORDER BY, etc. Aggregate functions may also be used such as AVG, SUM, MIN, etc. Various references are available to to see the correct usage of each SQL command.', 'https://www.freecodecamp.org/news/learn-sql-in-10-minutes/', 'Curriculum'),
+	(37, 'https://www.youtube.com/watch?v=OxeboWvLC_U', 'Symbols (operators) in SQL are used for comparisons, arithmetic, boolean logic, and string manipulation, amongst other things. There are references available to review the uses.', 'https://www.sisense.com/blog/sql-symbol-cheatsheet/', 'Curriculum'),
+	(38, 'https://www.youtube.com/watch?v=B5r8CcTUs5Y', 'Primary key columns are columns that hold a value that''s unique for every row in that table. They are identifiers that you can use to get a specific row of data.  A PK that is a sinlge column is "simple" or "composite" if it is more than one column.', 'https://www.geeksforgeeks.org/difference-between-primary-key-and-foreign-key/#:~:text=1-,A%20primary%20key%20is%20used%20to%20ensure%20data%20in%20the,between%20data%20in%20two%20tables.&text=It%20uniquely%20identifies%20a%20record%20in%20the%20relational%20database%20table.', 'Curriculum'),
+	(39, 'https://www.youtube.com/watch?v=B5r8CcTUs5Y', 'A foreign key is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table. The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.', 'https://www.geeksforgeeks.org/difference-between-primary-key-and-foreign-key/#:~:text=1-,A%20primary%20key%20is%20used%20to%20ensure%20data%20in%20the,between%20data%20in%20two%20tables.&text=It%20uniquely%20identifies%20a%20record%20in%20the%20relational%20database%20table.', 'Curriculum'),
+	(40, 'https://www.youtube.com/watch?v=mYsUjlqX2Aw', 'Cardinality refers to the uniqueness of values in SQL and  their relationships. Table relationships include one-to-one, one-to-many and many-to-many relationships.', 'https://www.sqlshack.com/learn-sql-types-of-relations/', 'Curriculum'),
+	(41, 'https://www.youtube.com/watch?v=imRj2wwTgAY', 'Constraints control what you''re allowed to do with the data in the database. When anything is changed in the database, the data is checked against constraints. Changes that conflict with the constraints are rejected. These include keys and data types.', 'https://www.w3schools.com/sql/sql_constraints.asp', 'Curriculum'),
+	(42, 'https://youtu.be/5fF7QivlWKc', 'Transactions allow for multiple SQL statements to be run together. Statements inside transactions are separate from others in the system. Transactions will not save to the database unless you COMMIT the changes. To discard the transaction changes use ROLLBACK.', 'https://www.tutorialspoint.com/sql/sql-transactions.htm#:~:text=Advertisements,sort%20of%20a%20database%20program.', 'Curriculum'),
+	(43, 'https://www.youtube.com/watch?v=9yeOJ0ZMUYw', 'Joins are used to combine rows from two or more tables, based on a related column between them. There are several types including an inner, full outer, left, and right join.', 'https://www.w3schools.com/sql/sql_join.asp'),
+	(44, 'https://youtu.be/5fF7QivlWKc', 'COMMIT will save changes from a transactions to a database.', 'https://www.tutorialspoint.com/sql/sql-transactions.htm', 'Curriculum'),
+	(45, 'https://youtu.be/UC-felOMDdk', 'ROLLBACK will discard changes from a transactions to a database.', 'https://www.sqlshack.com/rollback-sql-rolling-back-transactions-via-the-rollback-sql-query/', 'Curriculum'),
+	(46, 'https://youtu.be/4qFZ-5i4GS8', 'Modeling is the first step in database design. You should identify what data you will keep track of, the primary keys, and the relationships between tables.', 'https://www.sisense.com/glossary/data-modeling/', 'Curriculum'),
+	(47, 'https://www.youtube.com/watch?v=MiAl2mQ718s', 'Building a database includes modeling the data, normalizing the data, determining the data types, then creating the tables.', 'https://www3.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html', 'Curriculum'),
+	(48, 'https://www.youtube.com/watch?v=J-drts33N8g', 'Normalization allows for database design that reduces redundancy and dependency. Of the several normal forms created, a common goal in design is reaching third normal form (3NF)', 'https://www.javatpoint.com/dbms-normalization', 'Curriculum'),
+	(49, 'https://www.youtube.com/watch?v=J-drts33N8g', '1NF requires rows that are all unique through use of a primary key, that each cell have a single value, and that each cell value cannot be broken down further.', 'https://www.javatpoint.com/dbms-normalization', 'Curriculum'),
+	(50, 'https://www.youtube.com/watch?v=J-drts33N8g', '2NF requries 1NF and that attributes must be dependent on the primary key.', 'https://www.javatpoint.com/dbms-normalizationhttps://www.javatpoint.com/dbms-normalization', 'Curriculum'),
+	(51, 'https://www.youtube.com/watch?v=J-drts33N8g', '3NF requres 1NF, 2NF, and that attributes must not be dependent on columns outside of the primary key.', 'https://www.javatpoint.com/dbms-normalization', 'Curriculum'),
+	(52, 'https://www.youtube.com/watch?v=CJjHdchLY9Y', 'Java-specific API that enables Java to access different data sources. Includes the API (which is database neutral) and the JDBC Driver.', 'https://www.progress.com/faqs/datadirect-jdbc-faqs/what-is-a-jdbc-driver', 'Curriculum'),
+	(53, 'https://www.youtube.com/watch?v=CJjHdchLY9Y', 'Because the API is database-neutral, the driver is used to handle communication between the API and specific database.', 'https://www.progress.com/faqs/datadirect-jdbc-faqs/what-is-a-jdbc-driver', 'Curriculum'),
+	(54, 'https://www.youtube.com/watch?v=CJjHdchLY9Y', 'A class of Spring JDBC that handles many small details required by the API when interacting with the database (like opening/closing database connections, exceptions, transferring data).', 'https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html', 'Curriculum'),
+	(55, 'https://www.youtube.com/watch?v=bigYRPn8VMg', 'This is a set of classes and interfaces that enable communication with a data source. Following the DAO pattern promotes encapsulation, loose coupling, and reduced repetition.', 'https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm', 'Curriculum'),
+	(56, 'https://www.youtube.com/watch?v=kRD6PA6uxiY', 'Tests that have outside dependencies. Like unit tests, they are reliable, independent, and obvious. They follow the arrange-act-assert pattern.', 'https://www.geeksforgeeks.org/software-engineering-integration-testing/', 'Curriculum'),
+	(57, 'https://www.youtube.com/watch?v=c9gqtjMaFHA', 'CRUD is an acronym for four functions used with databases. In SQL they are Create(INSERT), Read(SELECT), Update(UPDATE), and Delete(DELETE). When using APIs they are Create(POST), Read(GET), Update(PUT), and Delete(DELETE).', 'https://www.educative.io/blog/crud-operations#sql', 'Curriculum'),
+	(58, 'https://www.youtube.com/watch?v=9Jva1tSeAWk', 'Hashing is a form of data security. It involves taking a value, putting it through a repeatable mathematical function, and getting a different value out the other end.', 'https://www.sentinelone.com/cybersecurity-101/hashing/', 'Curriculum'),
+	(59, 'https://www.youtube.com/watch?v=9Jva1tSeAWk', 'encryption is the process of encoding a message or information in such a way that only authorized parties can read it, and those who are not authorized cannot.', 'https://www.cisco.com/c/en/us/products/security/encryption-explained.html', 'Curriculum'),
+	(60, 'https://www.youtube.com/watch?v=uhYKOHPRyCc', 'This is the address of an online resource like a website or document. Includes protocol (http), sub-domain(www), domain name(amazon), and top level domain (.com).', 'https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL', 'Curriculum'),
+	(61, 'https://www.youtube.com/watch?v=0PHCAdw6Z8w', 'Hypertext transfer protocol (HTTP) determines how the browser connects with a web server. Hypertext transfer protocol secure (HTTPS) is an extension that is more protected.', 'https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/#:~:text=The%20only%20difference%20between%20the,uses%20HTTPS%20has%20https%3A%2F%2F.', 'Curriculum'),
+	(62, 'https://www.youtube.com/watch?v=8zEVA-Bxs-0', 'Computers use a string of numbers called an IP address to locate websites.', 'https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address', 'Curriculum'),
+	(63, 'https://youtu.be/e2xLV7pCOLI', 'A domain name system, or DNS, translates domains (website name) to an IP address for the computer to locate. ', 'https://aws.amazon.com/route53/what-is-dns/', 'Curriculum'), 
+	(64, 'https://www.youtube.com/watch?v=wJa5CTIFj7U', 'Status codes follow an HTTP resonse to indicate whether a specific HTTP request has completed successfully or not. 100-199 = information responses; 200-299= successful responses; 300-399= redirection responses; 400-499= client error responses; 500-599= server error responses.', 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Status', 'Curriculum'),
+	(65, 'https://www.youtube.com/watch?v=Yzx7ihtCGBs', 'Application programming interfaces (APIs) allow for the transfer of data between different computer programs. Web APIs are accessible on the internet. APIs and their methods can be tested using Postman.', 'https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces', 'Curriculum'),
+	(66, 'https://www.youtube.com/watch?v=iiADhChRriM', 'APIs often return information in JSON format. JSON is a data-interchange format that''s language independent and human-readable. Information is structured in key-value pairs within double quotes. A list of values are representated in array notation.', 'https://www.w3schools.com/js/js_json_intro.asp', 'Curriculum'),
+	(67, 'https://www.youtube.com/watch?v=6B6vp0jZnb0', 'Serialization is the process of changing a Java object into values in JSON format. Deserialization is the process of converting a JSON string into a Java object (or array of objects).', 'https://www.geeksforgeeks.org/serialization-in-java/', 'Curriculum'),
+	(68, 'https://www.youtube.com/watch?v=Q-BpqyOT3a8', 'REST, in short, means using URLs and standard HTTP methods to communicate with other applications. There is no definitive standard, but relies on HTTP standards that define HTTP methods.', 'https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces', 'Curriculum'),
+	(69, 'https://www.youtube.com/watch?v=DUg2SWWK18I', 'The MVC is a design pattern used for building applications that promotes loose coupling and prevents any particular portion of the application from doing too much by breaking the application into three parts: Model, View, and Controller.', 'https://developer.mozilla.org/en-US/docs/Glossary/MVC', 'Curriculum'),
+	(70, 'https://www.youtube.com/watch?v=DUg2SWWK18I', 'Models are classes that represent the data in an application and provide the business logic.', 'https://developer.mozilla.org/en-US/docs/Glossary/MVChttps://developer.mozilla.org/en-US/docs/Glossary/MVC', 'Curriculum'),
+	(71, 'https://www.youtube.com/watch?v=DUg2SWWK18I', 'Views are the pieces of an application that display the user interface. The view in an API refers to the JSON that''s returned to the client. The JSON is the data that''s the content of your view.', 'https://developer.mozilla.org/en-US/docs/Glossary/MVChttps://developer.mozilla.org/en-US/docs/Glossary/MVC', 'Curriculum'), 
+	(72, 'https://www.youtube.com/watch?v=DUg2SWWK18I', 'All incoming client requests go to the controller which retrieves the model data and sends it to the client in the appropriate view.', 'https://developer.mozilla.org/en-US/docs/Glossary/MVC', 'Curriculum'),
+	(73, 'https://www.youtube.com/watch?v=YDRNMAJo0MA', 'Spring Boot is an extension of the Spring framework to make development, testing, and deployment more convenient by simplying the framework.', 'https://www.javatpoint.com/spring-boot-tutorial', 'Curriculum'), 
+	(74, 'https://www.youtube.com/watch?v=xkDBaldNki4', 'The most popular MVC framework is the Spring MVC, which is a component of the larger Spring Framework.', 'https://www.javatpoint.com/spring-mvc-tutorial', 'Curriculum'),
+	(75, 'https://www.youtube.com/watch?v=0LYqy0wvS20&t=98s', 'The Spring JDBC is a component of the larger Spring Framework that enables the use of the jdbctemplate.', 'https://www.javatpoint.com/spring-JdbcTemplate-tutorial', 'Curriculum'),
+	(76, 'https://www.youtube.com/watch?v=Spzug_SjJnM', 'The Spring Framework is the most popular application development framework for Java. It features several components to enable the buidling of high performing, easily testable, and reusable code.', 'https://www.javatpoint.com/spring-tutorial', 'Curriculum'),
+	(77, '')
+
+
+
+
+
+INSERT INTO keyword_topic (keyword_id, topic_id)
+VALUES
+	(34, 34),
+	(83, 34),
+
+
 
 SELECT * FROM topic
 select * from question

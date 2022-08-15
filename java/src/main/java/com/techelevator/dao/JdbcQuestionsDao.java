@@ -39,17 +39,17 @@ public class JdbcQuestionsDao implements QuestionsDao {
     }
 
     @Override
-    public Questions getQuestionsByType(String questionType) {
-        Questions questions = new Questions();
+    public List<Questions> getQuestionsByType(String questionType) {
+        List<Questions> questionList = new ArrayList<>();
         String sql = "SELECT question_id, the_question, question_answer, question_type FROM question WHERE question_type = ?;";
 
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, questionType);
 
         while (result.next()) {
-            questions = mapRowSetToQuestions(result);
+            questionList.add(mapRowSetToQuestions(result));
         }
 
-        return questions;
+        return questionList;
     }
 
     @Override
