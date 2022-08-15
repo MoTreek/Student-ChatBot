@@ -26,5 +26,12 @@ export default {
     },
     getWebRef(keyword) {
         return http.get(`topic/web/${keyword}`)
+    },
+    getQuestionTechnical(){
+        return http.get(`/questions/questionType/technical`)
+    },
+    getQuestionPathway(){
+        return http.get(`/questions/questionType/pathway`)
     }
+
 }
