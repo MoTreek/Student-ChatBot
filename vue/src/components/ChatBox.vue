@@ -110,7 +110,7 @@ showJobs(){
         text: message,
         author: 'client'
       })
-      if (this.message.toLowerCase().includes("job")) {
+      if (this.message.toLowerCase().includes("job") || this.message.toLowerCase().includes("jobs") || this.message.toLowerCase().includes("position")) {
         this.found = true;
       }
       if (this.message.toLowerCase().includes("help")) {
