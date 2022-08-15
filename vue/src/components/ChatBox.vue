@@ -21,7 +21,7 @@
 
                   
           </div>
-<job-search-component v-show: this.message = 'job'/>
+<job-search-component v-if = "this.message == 'job'"/>
       <ul class="chat-box-list">
 
 
@@ -98,12 +98,6 @@ export default {
         this.message = ''
         this.messages.push({
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
-          author: 'server'
-        })}
-        else if (this.message.toLowerCase().includes("job")) {
-        this.message = ''
-        this.messages.push({
-          // text: "Justin Credible",
           author: 'server'
         })
 
