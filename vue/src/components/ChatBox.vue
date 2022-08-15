@@ -7,20 +7,7 @@
           {{ this.keywords }};
         </div> -->
 
-        <div class = "buttons" v-if="!clicked">
-          <div class = "button-one">
-              <button v-on:click="onButtonClick()" @click="clicked = !clicked" > What is MVC?
-                </button>
-                </div>
-
-                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> Find job postings.
-                </button>
-
-                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> How to write a resume. 
-                  </button>
-
-                  
-          </div>
+       
           <div v-show="found"><!-- <div v-if="isVisible === true"> -->
 <job-search-component />
 </div>
@@ -45,6 +32,23 @@
         </li>
       </ul>
     </div>
+
+ <div class = "buttons" v-if="!clicked">
+          <div class = "button-one">
+              <button v-on:click="onButtonClick()" @click="clicked = !clicked" > What is MVC?
+                </button>
+                </div>
+
+                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> Find job postings.
+                </button>
+
+                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> How to write a resume. 
+                  </button>
+
+                  
+          </div>
+
+
     <div class="chat-inputs">
       <input
         type="text"
@@ -80,6 +84,8 @@ export default {
     keywords: [],
     keyword: 'oop',
     sql: [],
+    technicalQuestion: [],
+    pathwayQuestion: [],
     clicked: false,
     mvc : "mvc is model view controller",
   isVisible: false,
@@ -113,6 +119,18 @@ showJobs(){
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
           author: 'server'
         })
+      }
+
+        else if (this.message.toLowerCase().includes("question")){
+           ChatBotService.getQuestionTechnical().then(response => {
+           this.technicalQuestion = response.data
+           this.messages.push({
+        text: response.data,
+        author: 'server'
+        })
+           })
+        
+      
 
         
       } else if (this.message.toLowerCase().includes("video")){
@@ -253,7 +271,13 @@ showJobs(){
   }),
     ChatBotService.getSql().then(response => {
       this.sql = response.data;
-    })
+    }), 
+    ChatBotService.getQuestionTechnical().then(response => {
+      this.technicalQuestion = response.data;
+    }),
+    ChatBotService.getQuestionPathway().then(response => {
+      this.pathwayQuestion = response.data;
+    } )
 }
 }
   
