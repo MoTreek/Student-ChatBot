@@ -32,6 +32,18 @@ VALUES
 (3, 2),
 (4, 2);
 
-SELECT * FROM topic
+INSERT INTO question (question_id, the_question, question_answer, question_type)
+VALUES
+(1, 'what are the benefits of OOP?', 'Code is modular, encapsulated, testable, and easy to reuse.', 'technical'),
+(2, 'what is SQL injection?', 'SQL injection is the placement of malicious code in SQL statements, via web page input.', 'technical'),
+(3, 'what is dependency injection?', 'dependency injection is a design pattern in which an object or function receives other objects or functions that it depends on.', 'technical'),
+(4, 'Give an example of a time when you had to think on your feet.', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway'),
+(5, 'Tell me about a time you set a goal for yourself. How did you go about ensuring that you would meet your objective?', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway');
+(6, 'Describe a time when you saw a problem and took the initiative to correct it.', 'Remember to answer by describing a specific situation, task, action, and result of the situation you are discussing.', 'pathway');
 
-ROLLBACK;
+
+
+SELECT * FROM topic
+select * from question
+
+commit;

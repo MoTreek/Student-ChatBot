@@ -28,6 +28,27 @@ CREATE TABLE keyword_topic (
 );
 
 
-Rollback;
+CREATE TABLE question (
+
+	question_id integer,
+	the_question varchar(200),
+	question_answer varchar(200),
+	question_type varchar(20),
+
+	CONSTRAINT pk_question PRIMARY KEY (question_id)
+);
+
+
+ALTER TABLE public.question
+    OWNER to postgres;
+
+GRANT UPDATE, DELETE, INSERT, SELECT ON TABLE public.question TO final_capstone_appuser;
+
+GRANT ALL ON TABLE public.question TO final_capstone_owner;
+
+GRANT ALL ON TABLE public.question TO postgres;
+
+
+Commit;
 
 
