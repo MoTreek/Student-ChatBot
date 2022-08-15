@@ -21,7 +21,7 @@
                     <p v-html="job.locations.name"></p>
                     <p>Flexible/Remote</p>
                     <a v-bind:href="job.refs.landing_page">Job Page</a>
-                    <button class="button" @click="clickCard()" />
+                    <!-- <button class="button" @click="clickCard()" /> -->
                 </div>
       <!-- <div class="Info" v-if="clickBoolean === true">
           {{ job.content }}
