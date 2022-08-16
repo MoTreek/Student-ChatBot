@@ -13,7 +13,7 @@
        
         <chat-box/>  
 
-        <job-search-component/>
+        <!-- <job-search-component/> -->
       </div>
 
       
@@ -23,7 +23,7 @@
 
 <script>
 import ChatBox from '../components/ChatBox.vue';
-import JobSearchComponent from '../components/JobSearchComponent.vue';
+// import JobSearchComponent from '../components/JobSearchComponent.vue';
 
 
 import QuoteComponent from "../components/QuoteComponent.vue";
@@ -36,7 +36,7 @@ export default {
     QuoteComponent,
     // HelpComponent,
     ChatBox,
-    JobSearchComponent,
+    // JobSearchComponent,
   },
 };
 </script>

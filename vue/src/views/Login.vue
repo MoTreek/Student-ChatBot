@@ -14,7 +14,7 @@
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
       <section class="user"> 
-      <label for="username" class="sr-only">Username</label>
+      <label for="username" class="sr-only"></label>
       <input
         type="text"
         id="username"
@@ -26,8 +26,8 @@
       />
       </section>
       <section class="password">
-      <label for="password" class="sr-only">Password</label>
-      <input
+      <label for="password" class="sr-only"></label>
+      <input 
         type="password"
         id="password"
         class="form-control"
@@ -37,8 +37,8 @@
       />
       </section>
       <section class="submit">
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
+      <router-link :to="{ name: 'register' }">Need an account?</router-link>
       </section>
     </form>
   </div>
@@ -85,9 +85,20 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-h1 {
+*{
   font-family: "Quicksand", sans-serif;
-  
+}
+
+input {
+  border: 0px;
+ border-radius: 5px;
+ text-align: center;
+ align-self: center;
+}
+
+button{
+   border: 0px;
+  border-radius: 5px;
 }
 
 
@@ -95,20 +106,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-content: center;
-   margin-left:0px;
-   margin-right:0px;
-    padding-left:0px;
-    padding-right:0px;
-   border: 5px solid yellow;
-   background-color: yellow;
    
-   
+}
+form{
+  background-color:  #69d2e7;
+  padding: 20px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+  text-align: center;
 }
 section{
   flex-direction: column;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid red;
+
+  width: 100%;
 }
 
 </style>
