@@ -86,7 +86,9 @@ export default {
     sql: [],
     technicalQuestion: [],
     pathwayQuestion: [],
+    randomTechnicalQuestion: [],
     clicked: false,
+    questionObject: {},
     mvc : "mvc is model view controller",
   isVisible: false,
     found: false
@@ -121,19 +123,48 @@ showJobs(){
         })
       }
 
-        else if (this.message.toLowerCase().includes("question")){
+        else if (this.message.toLowerCase().includes("question")) {
+        if (this.message.toLowerCase().includes("technical")) {
+
            ChatBotService.getQuestionTechnical().then(response => {
            this.technicalQuestion = response.data
+          
+             const randomIndex = Math.floor(Math.random() * this.technicalQuestion.length);
+              this.questionObject = this.technicalQuestion[randomIndex]
+           
            this.messages.push({
-        text: response.data,
+        text: this.questionObject.theQuestion,
         author: 'server'
         })
-           })
-        
+          
       
+        })
+        } 
+        else if (this.message.toLowerCase().includes("pathway")) {
+           ChatBotService.getQuestionPathway().then(response => {
+           this.pathwayQuestion = response.data
+          
+             const randomIndex = Math.floor(Math.random() * this.pathwayQuestion.length);
+              this.questionObject = this.pathwayQuestion[randomIndex]
+           
+           this.messages.push({
+        text: this.questionObject.theQuestion,
+        author: 'server'
+        })
+          
+        })
+           }
 
-        
-      } else if (this.message.toLowerCase().includes("video")){
+
+
+           
+      }  
+      else if (this.message.toLowerCase().includes("answer")){
+            this.messages.push({
+            text: this.questionObject.questionAnswer,
+            author: 'server'
+            })
+      }else if (this.message.toLowerCase().includes("video")){
         this.selectDisplayChoice(this.dif, "video")
       } else if (this.message.toLowerCase().includes("text") || this.message.toLowerCase().includes("description")) {
         this.selectDisplayChoice(this.dif, "text")
@@ -277,7 +308,10 @@ showJobs(){
     }),
     ChatBotService.getQuestionPathway().then(response => {
       this.pathwayQuestion = response.data;
-    } )
+    } ),
+    ChatBotService.getQuestionTechnicalRandom().then(response => {
+      this.randomTechnicalQuestion = response.data;
+    })
 }
 }
   

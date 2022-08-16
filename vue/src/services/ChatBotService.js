@@ -32,6 +32,9 @@ export default {
     },
     getQuestionPathway(){
         return http.get(`/questions/questionType/pathway`)
+    },
+    getQuestionTechnicalRandom(question){
+        return http.get(`questions/questionType/technical/${question}`)
     }
 
 }
