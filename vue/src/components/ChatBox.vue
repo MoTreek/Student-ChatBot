@@ -347,6 +347,12 @@ showJobs(){
   
 .chat-box-list .server p span {
       background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
+      font-size: 18px;
+      border-radius: 10px;
+      /* box-shadow:
+    0 0 60px 10px rgba(255, 255, 255, 0.226),  
+    0 0 100px 10px rgba(255, 0, 255, 0.295), 
+    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
     }
     
   .chat-box-list .server p {
@@ -356,6 +362,12 @@ showJobs(){
   
   .chat-box-list .client p span {
       background: #0070C8;
+      font-size: 18px;
+      border-radius: 10px;
+         box-shadow:
+    /* 0 0 60px 10px rgba(255, 255, 255, 0.226),  
+    0 0 100px 10px rgba(255, 0, 255, 0.295), 
+    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
     }
 
     .chat-box-list .client p {
@@ -365,14 +377,37 @@ showJobs(){
 
     
     .DivToScroll{   
-    background-color: #F5F5F5;
-    border: 1px solid #DDDDDD;
+    background-color: #f5f5f51f;
+    /* border: 1px solid #DDDDDD; */
     border-radius: 4px 0 4px 0;
     color: #3B3C3E;
     font-size: 12px;
     font-weight: bold;
     left: -1px;
     padding: 10px 7px 5px;
+    border-radius: 10px;
+    
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.39); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.459); 
 }
 
 .DivWithScroll{
@@ -385,7 +420,7 @@ showJobs(){
 
 .chat-box {
   margin: 10px;
-  border: 1px solid #999;
+  /* border: 1px solid #999; */
   width: 60vw;
   height: 70vh;
   border-radius: 4px;
@@ -429,19 +464,22 @@ showJobs(){
 
   .buttons {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    justify-content: flex-end;
     padding: 10px;
+    background-color: #f5f5f51f;
+    
 
   }
 
   .buttons button {
-    background: linear-gradient(rgb(255, 244, 221), rgb(247, 191, 88));
+    /* background: linear-gradient(rgb(255, 244, 221), rgb(247, 191, 88)); */
     color: black;
-    border: 2px solid rgb(243, 234, 224);
+    border: 2px solid rgb(230, 174, 110);
+    font-size: 18px;
     font-family: "Quicksand", sans-serif;
     padding: 10px;
     cursor: pointer;
+    border-radius: 9px;
 
   }
 
