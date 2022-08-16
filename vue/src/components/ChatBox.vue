@@ -382,7 +382,7 @@ showJobs(){
     border-radius: 4px 0 4px 0;
     color: #3B3C3E;
     font-size: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
     left: -1px;
     padding: 10px 7px 5px;
     border-radius: 10px;
