@@ -37,7 +37,7 @@
       />
       </section>
       <section class="submit">
-      <button type="submit">Sign in</button>
+      <button type="submit">Sign in</button>  <br> <br>
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       </section>
     </form>
@@ -87,13 +87,24 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 *{
   font-family: "Quicksand", sans-serif;
+ 
+
+
 }
+#login { 
+  background-color: #a7dbd8;
+  zoom: 2; 
+    -moz-transform: scale(0); 
+    -moz-transform-origin: 0 0;
+    overflow: hidden;
+    }
 
 input {
   border: 0px;
  border-radius: 5px;
  text-align: center;
  align-self: center;
+ 
 }
 
 button{

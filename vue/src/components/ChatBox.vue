@@ -364,10 +364,7 @@ showJobs(){
       background: #0070C8;
       font-size: 18px;
       border-radius: 10px;
-         box-shadow:
-    /* 0 0 60px 10px rgba(255, 255, 255, 0.226),  
-    0 0 100px 10px rgba(255, 0, 255, 0.295), 
-    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
+         
     }
 
     .chat-box-list .client p {
