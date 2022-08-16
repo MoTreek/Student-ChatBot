@@ -1,7 +1,7 @@
 <template>
   <section class="chat-box">
     <div class="chat-box-list-container" ref="chatbox">
-        <div class="DivToScroll">
+        <!-- <div class="DivToScroll"> -->
 <!-- 
         <div>
           {{ this.keywords }};
@@ -58,7 +58,7 @@
       <button @click="sendMessage" >Send</button>
       <!-- </div> -->
     </div>
-    </div>
+    <!-- </div> -->
   </section>
 </template>
 
@@ -335,7 +335,7 @@ showJobs(){
   margin-bottom: 1px;
 }
 .chat-box-list {
-  height: 100vh;
+  height: 70vh;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -409,12 +409,12 @@ showJobs(){
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.459); 
 }
-
+/* 
 .DivWithScroll{
     height:120px;
     overflow:scroll;
     overflow-x:hidden;
-}
+} */
     
   
 
