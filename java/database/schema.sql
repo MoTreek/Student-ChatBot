@@ -1,9 +1,11 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS keyword_topic;
 DROP TABLE IF EXISTS keyword;
 DROP TABLE IF EXISTS topic;
-DROP TABLE IF EXISTS keyword_topic;
+DROP TABLE IF EXISTS question;
+
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -12,6 +14,8 @@ CREATE TABLE users (
 	role varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
+
+
 
 CREATE TABLE keyword (
 	
@@ -40,6 +44,26 @@ CREATE TABLE keyword_topic (
 	FOREIGN KEY (topic_id) REFERENCES topic(topic_id),
 	FOREIGN KEY (keyword_id) REFERENCES keyword(keyword_id)
 );
+
+CREATE TABLE question (
+
+	question_id integer,
+	the_question varchar(300),
+	question_answer varchar(300),
+	question_type varchar(20),
+
+	CONSTRAINT pk_question PRIMARY KEY (question_id)
+);
+
+
+ALTER TABLE public.question
+    OWNER to postgres;
+
+GRANT UPDATE, DELETE, INSERT, SELECT ON TABLE public.question TO final_capstone_appuser;
+
+GRANT ALL ON TABLE public.question TO final_capstone_owner;
+
+GRANT ALL ON TABLE public.question TO postgres;
 
 
 
