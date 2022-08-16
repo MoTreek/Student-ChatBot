@@ -51,7 +51,7 @@
 
     <div class="chat-inputs">
       <input
-        type="text"
+        type="text" placeholder="ask me a question"
         v-model.lazy="message"
         @keyup.enter="sendMessage"
       />
