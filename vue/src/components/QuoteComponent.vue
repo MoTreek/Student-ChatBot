@@ -31,5 +31,8 @@ export default {
 div.QCS{
     font-style: italic;
     color: white;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto
 }
 </style>
