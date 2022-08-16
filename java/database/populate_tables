@@ -364,13 +364,505 @@ VALUES
 	(80, 'https://www.youtube.com/watch?v=85BBfKo6bdo', 'This is the verification of a user''s identity. It can be accomplished using passwords, pins, keys, fingerprints, etc.', 'https://www.onelogin.com/learn/authentication-vs-authorization#:~:text=Authentication%20and%20authorization%20are%20two,authorization%20determines%20their%20access%20rights.', 'Curriculum'),
 	(81, 'https://www.youtube.com/watch?v=85BBfKo6bdo', 'Authorization is the permission to access certain functions.', 'https://www.onelogin.com/learn/authentication-vs-authorization#:~:text=Authentication%20and%20authorization%20are%20two,authorization%20determines%20their%20access%20rights.', 'Curriculum');
 	
+Start Transaction;
+INSERT INTO keyword (keyword_id, keyword_description)
+VALUES 
+(82, 'GIT'),
+(83, 'GIT BASH'),
+
+(84, 'DATA TYPES'),
+(85, 'VARIABLES'),
+(86, 'PRIMITIVE'),
+(87, 'DOUBLE'),
+(88, 'INT'),
+(89, 'INTEGER'),
+(90, 'FLOAT'),
+(91, 'CHAR'),
+
+(92, 'STRING'),
+(93, 'CONCATENATION'),
+(94, 'CONTAINS'),
+(95, 'INDEX OF'),
+(96, 'STRING MANIPULATION'),
+(97, 'PARSE'),
+
+(98, 'BIG DECIMAL'),
+(99, 'MONEY'),
+
+(100, 'METHODS'),
+(101, 'METHOD SIGNATURES'),
+
+(102, 'CLASS'),
+
+(103, 'OBJECT'),
+
+(104, 'EXPRESSIONS'),
+(105, 'MUTIPLY'),
+(106, 'DIVIDE'),
+(107, 'ADD'),
+(108, 'MODULO'),
+(109, '+'),
+(110, '-'),
+(111, '*'),
+(112, '%'),
+(113, 'PERCENTAGE'),
+
+(114, 'COMPARE'),
+(115, 'GREATER THAN'),
+(116, 'LESS THAN'),
+(117, 'EQUAL TO'),
+(118, '>'),
+(119, '<'),
+(120, '>='),
+(121, '<='),
+(122, 'AND'),
+(123, '&&'),
+(124, 'OR'),
+(125, '||'),
+(126, 'COMPARE STRINGS'),
+(127, 'COMPARISON'),
+
+(128, 'CONVERSIONS'),
+(129, 'CASTING'),
+
+(130, 'CONDITIONAL'),
+(131, 'IF'),
+(132, 'ELSE'),
+(133, 'ELSE-IF'),
+
+(134, 'LOOPS'),
+(135, 'FOR LOOP'),
+(136, 'WHILE LOOP'),
+(137, 'DO WHILE LOOP'),
+(138, 'FOR EACH LOOP'),
+
+(139, 'LOGICAL BRANCHING'),
+(140, 'BREAK'),
+(141, 'CONTINUE '),
+(142, 'RETURN'),
+
+(144, 'COMMAND LINE'),
+
+(145, 'STACK'),
+
+(146, 'HEAP'),
+
+(147, 'COLLECTIONS'),
+
+(148, 'LISTS'),
+(149, 'ARRAYLIST'),
+
+(150, 'ARRAYS'),
+
+(151, 'QUEUES'),
+
+(152, 'MAP'),
+(153, 'KEY'),
+(154, 'KEY VALUE'),
+
+(155, 'SET'),
+
+(156, 'CONSTRUCTORS'),
+(157, 'ACCESS MODIFIERS'),
+(158, 'PRIVATE'),
+(159, 'PUBLIC'),
+(160, 'STATIC'),
+
+(161, 'OVERLOADING'),
+
+(162, 'OVERRIDING'),
+
+(163, 'LOOSELY COUPLED'),
+(164, 'COUPLING'),
+
+(165, 'INHERITANCE'),
+
+(166, 'POLYMORPHISM'),
+
+(167, 'ABSTRACT'),
+
+(168, 'INTERFACE'),
+
+(169, 'ENCAPSULATION'),
+
+(170, 'UNIT TESTING'),
+(171, 'EXCEPTION HANDLING'),
+(172, 'EXCEPTION'),
+(173, 'DEFENSIVE PROGRAMMING'),
+(174, 'SECRUITY'),
+(175, 'TESTING'),
+(176, 'UNIT'),
+(177, 'TRY CATCH'),
+(178, 'CATCH'),
+(179, 'TRY'),
+(180, 'FINALLY'),
+
+(181, 'FILE I/O'),
+(182, 'INPUT'),
+(183, 'OUTPUT'),
+(184, 'INPUT/OUTPUT'),
+(185, 'FILE INPUT'),
+(186, 'FILE OUTPUT'),
+(187, 'FILE INPUT/OUTPUT');
 
 
 
+INSERT INTO topic (topic_id, VideoRef, TextRef, WebRef, topic_type)
+VALUES 
+
+(82,
+  'https://www.youtube.com/watch?v=iGutIN5t9Mo',
+  '"At its core, Git is a set of command line utility programs that are designed to execute on a Unix style command-line environment. Modern operating systems like Linux and macOS both include built-in Unix command line terminals. This makes Linux and macOS complementary operating systems when working with Git. Microsoft Windows instead uses Windows command prompt, a non-Unix terminal environment. In Windows environments, Git is often packaged as part of higher level GUI applications. GUIs for Git may attempt to abstract and hide the underlying version control system primitives. This can be a great aid for Git beginners to rapidly contribute to a project. Once a projects collaboration requirements grow with other team members, it is critical to be aware of how the actual raw Git methods work. This is when it can be beneficial to drop a GUI version for the command line tools. Git Bash is offered to provide a terminal Git experience."',
+  'https://www.atlassian.com/git/tutorials/git-bash#:~:text=What%20is%20Git%20Bash%3F,operating%20system%20through%20written%20commands.',
+  'Curriculum'
+  ),
+(83,
+  'https://www.youtube.com/watch?v=sVIvhzEizEQ',
+  '"n Java language, primitive data types are the building blocks of data manipulation. These are the most basic data types available in Java language. There are 8 types of primitive data types: boolean data type
+byte data type
+char data type
+short data type
+int data type
+long data type
+float data type
+double data type"',
+  'https://www.w3schools.com/java/java_data_types.asp',
+  'Curriculum'
+  ),
+(84,
+  'https://www.youtube.com/watch?v=R57pDw5cvGA',
+  '"Strings, which are widely used in Java programming, are a sequence of characters. In the Java programming language, strings are objects. The Java platform provides the String class to create and manipulate strings."',
+  'https://www.w3schools.com/java/java_strings.asp',
+  'Curriculum'
+  ),
+(85,
+  'https://www.youtube.com/watch?v=Rs2jQuKd-vs',
+	'"Java includes a BigDecimal class for performing high-precision arithmetic which can be used in banking or financial domain based application. This class approximately fit into the same category as the “wrapper” classes but has some very useful methods. This class has methods that provide analogs for the operations that you perform on primitive types. That is, you can do anything with a BigDecimal that you can with an int or float, it’s just that you must use method calls instead of operators. Also, since there’s more involved, the operations will be slower. You’re exchanging speed for accuracy. BigDecimal is for arbitrary-precision fixed-point numbers; you can use these for accurate monetary calculations. Below Java code explains the concept of accuracy in calculation. One part is doing all calculation using double while another part is having calculation using BigDecimal. The output shows a difference between them."',
+  'https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html',
+  'Curriculum'
+  ),
+(86,
+  'https://www.youtube.com/watch?v=r0SewFmbCUI',
+	'A method in Java or Java Method is a collection of statements that perform some specific task and return the result to the caller. A Java method can perform some specific task without returning anything. Methods in Java allow us to reuse the code without retyping the code. In Java, every method must be part of some class that is different from languages like C, C++, and Python. ',
+ 'https://www.w3schools.com/java/java_methods.asp',
+  'Curriculum'
+  ),
+(87,
+  'https://www.youtube.com/watch?v=EplETikbJis',
+	'A class is a non-primitive or user-defined data type in Java',
+ 'https://www.w3schools.com/java/java_classes.asp',
+  'Curriculum'
+  ),
+(88,
+  'https://www.youtube.com/watch?v=EMoHBbSp6ZE',
+	'A Java object is a member (also called an instance) of a Java class. Each object has an identity, a behavior and a state. The state of an object is stored in fields (variables), while methods (functions) display the objects behavior.',
+ 'https://www.w3schools.com/java/java_classes.asp',
+  'Curriculum'
+  ),
+(89,
+  'https://www.youtube.com/watch?v=pZHJU9T0vwE',
+	'Expressions perform the work of a Java program. Among other things, expressions are used to compute and assign values to variables and to help control the execution flow of a program. The job of an expression is two-fold: perform the computation indicated by the elements of the expression and return some value.',
+ 'https://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html',
+  'Curriculum'
+  ),
+(90,
+  'https://www.youtube.com/watch?v=jRdPsDjW8DY',
+	'"The equality and relational operators determine if one operand is greater than, less than, equal to, or not equal to another operand. The majority of these operators will probably look familiar to you as well. Keep in mind that you must use ""=="", not ""="", when testing if two primitive values are equal.
+
+==      equal to
+!=      not equal to
+>       greater than
+>=      greater than or equal to
+<       less than
+<=      less than or equal to"',
+ 'https://www.w3schools.com/java/java_operators.asp',
+  'Curriculum'
+  ),
+(91,
+  'https://www.youtube.com/watch?v=UTdaOt9jiZ4',
+	'Converting one primitive datatype into another is known as type casting (type conversion) in Java. You can cast the primitive datatypes in two ways namely, Widening and, Narrowing.',
+  'https://www.tutorialspoint.com/what-is-type-conversion-in-java',
+  'Curriculum'
+  ),
+(92,
+  'https://www.youtube.com/watch?v=P6ivQ3QRq0I',
+	'Java has the following conditional statements: Use if to specify a block of code to be executed, if a specified condition is true. Use else to specify a block of code to be executed, if the same condition is false. Use else if to specify a new condition to test, if the first condition is false.',
+ 'https://www.w3schools.com/java/java_conditions.asp#:~:text=Java%20has%20the%20following%20conditional,the%20first%20condition%20is%20false',
+  'Curriculum'
+  ),
+(93,
+  'https://www.youtube.com/watch?v=6djggrlkHY8',
+	'In Java, there are three kinds of loops which are – the for loop, the while loop, and the do-while loop. All these three loop constructs of Java executes a set of repeated statements as long as a specified condition remains true.',
+ 'https://www.geeksforgeeks.org/loops-in-java/',
+  'Curriculum'
+  ),
+(94,
+  'https://www.youtube.com/watch?v=xuWOW4UgyAI',
+	'Java has mainly three branching statements, i.e., continue, break, and return. The branching statements allow us to exit from a control statement when a certain condition meet. In Java, continue and break statements are two essential branching statements used with the control statements.',
+ 'https://www.javatpoint.com/branching-statements-in-java#:~:text=Java%20has%20mainly%20three%20branching,used%20with%20the%20control%20statements.',
+  'Curriculum'
+  ),
+(95,
+  'https://www.youtube.com/watch?v=Up17-azeuyE',
+	'A command-line argument is an information that directly follows the programs name on the command line when it is executed. ',
+ 'https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html',
+  'Curriculum'
+  ),
+(96,
+  'https://www.youtube.com/watch?v=ILJgewz5Dxw',
+	'Java Collection framework provides a Stack class that models and implements a Stack data structure. The class is based on the basic principle of last-in-first-out. In addition to the basic push and pop operations, the class provides three more functions of empty, search, and peek. The class can also be said to extend Vector and treats the class as a stack with the five mentioned functions. The class can also be referred to as the subclass of Vector.',
+ 'https://www.geeksforgeeks.org/stack-class-in-java/',
+  'Curriculum'
+  ),
+(97,
+  'https://www.youtube.com/watch?v=eFCn6udv3gQ',
+	'A heap is a special data structure in Java. A heap is a tree-based data structure and can be classified as a complete binary tree. All the nodes of the heap are arranged in a specific order.',
+ 'https://www.softwaretestinghelp.com/heap-data-structure-in-java/#:~:text=A%20heap%20is%20a%20special,arranged%20in%20a%20specific%20order.',
+  'Curriculum'
+  ),
+(98,
+  'https://www.youtube.com/watch?v=GdAon80-0KA',
+	  '"The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.''',
+ 
+  'https://www.javatpoint.com/collections-in-java',
+  'Curriculum'
+  ),
+(99,
+  'https://www.youtube.com/watch?v=kHstgo8sDa4',
+	'The List interface in Java provides a way to store the ordered collection. It is a child interface of Collection. It is an ordered collection of objects in which duplicate values can be stored. Since List preserves the insertion order, it allows positional access and insertion of elements. ',
+ 'https://www.geeksforgeeks.org/list-interface-java-examples/',
+  'Curriculum'
+  ),
+(100,
+  'https://www.youtube.com/watch?v=xzjZy-dHHLw',
+	'An array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed.',
+ 'https://www.w3schools.com/java/java_arrays.asp',
+  'Curriculum'
+  ),
+(101,
+  'https://www.youtube.com/watch?v=91CMnJeHJVc',
+	'"The Queue interface is present in java.util package and extends the Collection interface is used to hold the elements about to be processed in FIFO(First In First Out) order. It is an ordered list of objects with its use limited to inserting elements at the end of the list and deleting elements from the start of the list, (i.e.), it follows the FIFO or the First-In-First-Out principle."',
+ 'https://www.geeksforgeeks.org/queue-interface-java/',
+  'Curriculum'
+  ),
+(102,
+  'https://www.youtube.com/watch?v=H62Jfv1DJlU',
+	'"An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+This interface takes the place of the Dictionary class, which was a totally abstract class rather than an interface. The Map interface provides three collection views, which allow a maps contents to be viewed as a set of keys, collection of values, or set of key-value mappings. The order of a map is defined as the order in which the iterators on the maps collection views return their elements. Some map implementations, like the TreeMap class, make specific guarantees as to their order; others, like the HashMap class, do not."',
+ 'https://www.geeksforgeeks.org/map-interface-java-examples/',
+  'Curriculum'
+  ),
+(103,
+  'https://www.youtube.com/watch?v=rruCajMgvGA',
+	'The set interface is present in java.util package and extends the Collection interface is an unordered collection of objects in which duplicate values cannot be stored. It is an interface that implements the mathematical set. This interface contains the methods inherited from the Collection interface and adds a feature that restricts the insertion of the duplicate elements. There are two interfaces that extend the set implementation namely SortedSet and NavigableSet.',
+ 'https://www.geeksforgeeks.org/set-in-java/',
+  'Curriculum'
+  ),
+(104,
+  'https://www.youtube.com/watch?v=G1Iln3PSrUg',
+	'A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes:',
+ 'https://www.w3schools.com/java/java_constructors.asp',
+  'Curriculum'
+  ),
+(105,
+  'https://www.geeksforgeeks.org/access-modifiers-java/',
+	'In Java, access modifiers are used to set the accessibility (visibility) of classes, interfaces, variables, methods, constructors, data members, and the setter methods.',
+ 'https://www.programiz.com/java-programming/access-modifiers',
+  'Curriculum'
+  ),
+(106,
+  'https://www.youtube.com/watch?v=vgg9T4_0CNA',
+	'In Java, two or more methods may have the same name if they differ in parameters (different number of parameters, different types of parameters, or both). These methods are called overloaded methods and this feature is called method overloading.',	
+ 'https://www.programiz.com/java-programming/method-overloading#:~:text=In%20Java%2C%20two%20or%20more,feature%20is%20called%20method%20overloading.',
+  'Curriculum'
+  ),
+(107,
+  'https://www.youtube.com/watch?v=neOvVLpy918',
+	'In Java, method overriding occurs when a subclass (child class) has the same method as the parent class. In other words, method overriding occurs when a subclass provides a particular implementation of a method declared by one of its parent classes.',
+ 'https://www.geeksforgeeks.org/overriding-in-java/',
+  'Curriculum'
+  ),
+(108,
+  'https://www.youtube.com/watch?v=5YatGdXgfDo',
+	'Loose coupling in Java means that the classes are independent of each other. The only knowledge one class has about the other class is what the other class has exposed through its interfaces in loose coupling. If a situation requires objects to be used from outside, it is termed as a loose coupling situation.',
+ 'https://www.geeksforgeeks.org/coupling-in-java/',
+  'Curriculum'
+  ),
+(109,
+  'https://www.youtube.com/watch?v=zbVAU7lK25Q',
+	'Inheritance is one of the key features of OOP that allows us to create a new class from an existing class. The new class that is created is known as subclass (child or derived class) and the existing class from where the child class is derived is known as superclass (parent or base class).',
+ 'https://www.programiz.com/java-programming/inheritance#:~:text=Inheritance%20is%20one%20of%20the,(parent%20or%20base%20class).',
+  'Curriculum'
+  ),
+(110,
+  'https://www.youtube.com/watch?v=Ft88V_rDO4I',
+	'Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance. Like we specified in the previous chapter; Inheritance lets us inherit attributes and methods from another class. Polymorphism uses those methods to perform different tasks.',
+ 'https://www.w3schools.com/java/java_polymorphism.asp#:~:text=Polymorphism%20means%20%22many%20forms%22%2C,methods%20to%20perform%20different%20tasks.',
+  'Curriculum'
+  ),
+(111,
+  'https://www.youtube.com/watch?v=52frlN8webg',
+	'The abstract keyword is a non-access modifier, used for classes and methods: Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract method: can only be used in an abstract class, and it does not have a body.',
+ 'https://www.w3schools.com/java/java_abstract.asp#:~:text=The%20abstract%20keyword%20is%20a,does%20not%20have%20a%20body.',
+  'Curriculum'
+  ),
+(112,
+  'https://www.youtube.com/watch?v=kTpp5n_CppQ',
+	'In Java, an interface is an abstract type that contains a collection of methods and constant variables. It is one of the core concepts in Java and is used to achieve abstraction, polymorphism and multiple inheritances. We can implement an interface in a Java class by using the implements keywor',
+ 'https://www.w3schools.com/java/java_interface.asp',
+  'Curriculum'
+  ),
+(113,
+  'https://www.youtube.com/watch?v=cU94So54cr8',
+	'Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class.',
+ 'https://www.geeksforgeeks.org/encapsulation-in-java/',
+  'Curriculum'
+  ),
+(114,
+  'https://www.youtube.com/watch?v=vZm0lHciFsQ',
+	'Unit testing refers to the testing of individual components in the source code, such as classes and their provided methods. The writing of tests reveals whether each class and method observes or deviates from the guideline of each method and class having a single, clear responsibility.',
+ 'https://java-programming.mooc.fi/part-6/3-introduction-to-testing#:~:text=Unit%20testing%20refers%20to%20the,having%20a%20single%2C%20clear%20responsibility.',
+  'Curriculum'
+  ),
+(115,
+  'https://www.youtube.com/watch?v=hgF21imQ_Is',
+	'When you develop any java application then you will get the requirement to interact with various input/output devices. Input-Output devices are the part of underlying hardware and operating system. To interact with the Input-Output devices through java program/application some implementations had to be used to improve the maintenance of applications when someone changes device or OS.',
+ 'https://www.tutorialspoint.com/java/java_files_io.htm',
+  'Curriculum'
+  );
+  
+  INSERT INTO keyword_topic (keyword_id, topic_id)
+VALUES
+(82,82),
+(83,82),
+
+(84,83),
+(85,83),
+(86,83),
+(87,83),
+(88,83),
+(89,83),
+(90,83),
+(91,83),
+
+(92,84),
+(93,84),
+(94,84),
+(95,84),
+(96,84),
+(97,84),
+
+(98, 85),
+(99, 85),
+
+(100, 86),
+(101, 86),
+
+(102, 87),
+
+(103, 88),
+
+(104, 89),
+
+(105,90),
+(106,90),
+(107,90),
+(108,90),
+(109,90),
+(110,90),
+(111,90),
+(112,90),
+(113,90),
+
+(114,91),
+(115,91),
+(116,91),
+(117,91),
+(118,91),
+(119,91),
+(120,91),
+(121,91),
+(122,91),
+(123,91),
+(124,91),
+(125,91),
+(126,91),
+(127,91),
+
+(128,92),
+(129,92),
+
+(130,93),
+(131,93),
+(132,93),
+(133,93),
+
+(134,94),
+(135,94),
+(136,94),
+(137,94),
+(138,94),
+
+(139,95),
+(140,95),
+(141,95),
+(142,95),
+
+(144,96),
+(145,97),
+(146,98),
+(147,99),
+
+(148,100),
+(149,100),
+
+(150,101),
+(151,102),
+
+(152,103),
+(153,103),
+(154,103),
+
+(155,104),
+
+(156,105),
+(157,105),
+(158,105),
+(159,105),
+(160,105),
+
+(161,106),
+
+(162,107),
+
+(163,108),
+(164,108),
+
+(165,109),
+(166,110),
+(167,111),
+(168,112),
+(169,113),
 
 
+(170,114),
+(171,114),
+(172,114),
+(173,114),
+(174,114),
+(175,114),
+(176,114),
+(177,114),
+(178,114),
+(179,114),
+(180,114),
 
-SELECT * FROM topic
-select * from question
+(181,115),
+(182,115),
+(183,115),
+(184,115),
+(185,115),
+(186,115),
+(187,115);
 
-commit;
+COMMIT TRANSACTION;

@@ -1,6 +1,7 @@
 <template>
+
   <div id="login" class="text-center">
-    <form class="form-signin" @submit.prevent="login">
+    <form class="form-signin" @submit.prevent="login" id="flex" >
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <div
         class="alert alert-danger"
@@ -12,6 +13,7 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
+      <section class="user"> 
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -22,6 +24,8 @@
         required
         autofocus
       />
+      </section>
+      <section class="password">
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -31,10 +35,14 @@
         v-model="user.password"
         required
       />
+      </section>
+      <section class="submit">
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
+      </section>
     </form>
   </div>
+
 </template>
 
 <script>
@@ -75,10 +83,32 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 h1 {
   font-family: "Quicksand", sans-serif;
   
 }
+
+
+#login{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+   margin-left:0px;
+   margin-right:0px;
+    padding-left:0px;
+    padding-right:0px;
+   border: 5px solid yellow;
+   background-color: yellow;
+   
+   
+}
+section{
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid red;
+}
+
 </style>
