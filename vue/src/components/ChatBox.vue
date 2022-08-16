@@ -386,7 +386,7 @@ showJobs(){
     left: -1px;
     padding: 10px 7px 5px;
     border-radius: 10px;
-    
+   
 }
 
 ::-webkit-scrollbar {
@@ -432,7 +432,8 @@ showJobs(){
 
 .chat-inputs {
   display: flex;
-  border: 2px solid rgb(233, 233, 233);
+  border: 2px solid rgba(233, 233, 233, 0.849);
+  border-radius: 8px;
   
   
 }
@@ -447,19 +448,23 @@ showJobs(){
     border-right: none;
     border-bottom-left-radius: 4px;
     padding-left: 15px;
+    font-family: "Quicksand", sans-serif;
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 8px;
   }
 
   .chat-inputs button {
     width: 145px;
     color: white;
     background: linear-gradient(rgb(169, 196, 230), rgb(111, 128, 173));
-    border-color: rgb(243, 242, 242);
+    border-color: rgba(243, 242, 242, 0.692);
     border-bottom: none;
     border-right:none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 3px;
     font-family: "Quicksand", sans-serif;
+    font-size: 18px;
   }
 
   .buttons {
@@ -483,6 +488,7 @@ showJobs(){
 
   }
 
+ 
  
 
 </style>
