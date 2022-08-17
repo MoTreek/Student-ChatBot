@@ -394,12 +394,14 @@ showJobs(){
 
 ::-webkit-scrollbar {
   width: 20px;
+  
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
   border-radius: 10px;
+  
 }
  
 /* Handle */
@@ -458,7 +460,7 @@ showJobs(){
 
   .chat-inputs button {
     width: 145px;
-    color: white;
+    color: rgb(119, 103, 103); 
     background: linear-gradient(rgb(169, 196, 230), rgb(111, 128, 173));
     border-color: rgba(243, 242, 242, 0.692);
     border-bottom: none;
@@ -474,7 +476,7 @@ showJobs(){
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    background-color: #f5f5f51f;
+    background-color: #fcf5f51f;
     
 
   }
