@@ -25,7 +25,7 @@
             <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" /><span >{{ message.text }}</span>
           </p>
           <p v-else-if="message.author == 'server'">
-            <img src = "C:\Users\Student\workspace\nlr-8-f-inal-capstone-student-chatbot\vue\images\Untitled-Artwork.jpg"/><span>{{message.text}}</span>
+            <img src = "\images\Untitled-Artwork.jpg"/><span>{{message.text}}</span>
           </p>
 
 
