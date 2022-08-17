@@ -6,7 +6,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpUL
 
 
 
-START TRANSACTION;
+/*
 INSERT INTO keyword (keyword_id, keyword_description)
 VALUES 
 (1, 'OOP'),
@@ -563,7 +563,7 @@ double data type"',
   ),
 (85,
   'https://www.youtube.com/watch?v=Rs2jQuKd-vs',
-	'"Java includes a BigDecimal class for performing high-precision arithmetic which can be used in banking or financial domain based application. This class approximately fit into the same category as the “wrapper” classes but has some very useful methods. This class has methods that provide analogs for the operations that you perform on primitive types. That is, you can do anything with a BigDecimal that you can with an int or float, it’s just that you must use method calls instead of operators. Also, since there’s more involved, the operations will be slower. You’re exchanging speed for accuracy. BigDecimal is for arbitrary-precision fixed-point numbers; you can use these for accurate monetary calculations. Below Java code explains the concept of accuracy in calculation. One part is doing all calculation using double while another part is having calculation using BigDecimal. The output shows a difference between them."',
+	'"Java includes a BigDecimal class for performing high-precision arithmetic which can be used in banking or financial domain based application. This class approximately fit into the same category as the “wrapper�? classes but has some very useful methods. This class has methods that provide analogs for the operations that you perform on primitive types. That is, you can do anything with a BigDecimal that you can with an int or float, it’s just that you must use method calls instead of operators. Also, since there’s more involved, the operations will be slower. You’re exchanging speed for accuracy. BigDecimal is for arbitrary-precision fixed-point numbers; you can use these for accurate monetary calculations. Below Java code explains the concept of accuracy in calculation. One part is doing all calculation using double while another part is having calculation using BigDecimal. The output shows a difference between them."',
   'https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html',
   'Curriculum'
   ),
@@ -1025,7 +1025,7 @@ VALUES
 
 
 
-
+*/
 
 
 COMMIT TRANSACTION;
