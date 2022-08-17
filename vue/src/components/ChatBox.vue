@@ -8,9 +8,7 @@
         </div> -->
 
        
-          <div v-show="found"><!-- <div v-if="isVisible === true"> -->
-<job-search-component />
-</div>
+      
       <ul class="chat-box-list">
 
 
@@ -34,6 +32,9 @@
 
         </li>
       </ul>
+          <div v-show="found"><!-- <div v-if="isVisible === true"> -->
+<job-search-component />
+</div>
     </div>
 
  <div class = "buttons" v-if="!clicked">
@@ -184,6 +185,7 @@ showJobs(){
           keywordArr.push(this.keywords[i].keywordDescription.toLowerCase())
         }
         // this.message = keywordArr;
+       this.message.toLowerCase().replace("is", '');
         let arr = this.message.toLowerCase().replace(/[.,/#!$%^?&*;:{}=\-_`~()]/g,"")
 .split(' ');
         let isFound = false;

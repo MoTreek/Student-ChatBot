@@ -107,6 +107,7 @@ export default {
 <style>
 *{
   font-family: "Quicksand", sans-serif;
+  
  
 
 
@@ -131,8 +132,16 @@ button{
   display: flex;
   justify-content: center;
   align-content: center;
+    background-color: #a7dbd8;
+  zoom: 2; 
+    -moz-transform: scale(0); 
+    -moz-transform-origin: 0 0;
+    overflow: hidden;
    
 }
+
+
+    
 form{
   background-color:  #69d2e7;
   padding: 20px;

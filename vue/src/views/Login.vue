@@ -90,11 +90,12 @@ export default {
 *{
   font-family: "Quicksand", sans-serif;
 }
- 
+ header{
+    background-color: #a7dbd8;
+ }
 .color {
 background-color: #a7dbd8;
 }
-
 
 
 #login { 
@@ -102,7 +103,7 @@ background-color: #a7dbd8;
   zoom: 2; 
     -moz-transform: scale(0); 
     -moz-transform-origin: 0 0;
-    overflow: hidden;
+    overflow: auto;
     }
 
 input {
@@ -123,6 +124,11 @@ button{
   display: flex;
   justify-content: center;
   align-content: center;
+   position:absolute;
+  top:30px;
+  right:0px;
+  bottom:0px;
+  left:0px;
    
 }
 form{
@@ -141,4 +147,7 @@ section{
   width: 100%;
 }
 
+main{
+
+}
 </style>

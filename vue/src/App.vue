@@ -9,16 +9,22 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+
+*{
+  border: 0px solid red;
+}
 #app{
   text-align: center;
   margin-bottom: 1px;
+  
   background-color: #a7dbd8;
 }
 #nav{
-   padding-top: 25px;
+   padding-top: 15px;
    margin-bottom: 25px;
- 
+ background-color: #a7dbd8;
+
 }
 .homebtn{
  border: 1px solid #f38630;
@@ -37,5 +43,6 @@ border: 1px solid #f38630;
  color: white;
  text-decoration: none;
 }
+
 </style>
 

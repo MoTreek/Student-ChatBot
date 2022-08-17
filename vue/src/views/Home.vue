@@ -48,6 +48,7 @@ h1 {
   
 }
 
+
 body.background {
   background-color: #69d2e7;
 }
