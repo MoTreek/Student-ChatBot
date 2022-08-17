@@ -1,13 +1,14 @@
 <template>
 
   <div id="login" class="text-center">
+    <div id="color">
     <form class="form-signin" @submit.prevent="login" id="flex" >
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <div
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      >Invalid Log-in!</div>
       <div
         class="alert alert-success"
         role="alert"
@@ -37,10 +38,11 @@
       />
       </section>
       <section class="submit">
-      <button type="submit">Sign in</button>
+      <button type="submit">Sign in</button>  <br> <br>
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       </section>
     </form>
+    </div>
   </div>
 
 </template>
@@ -88,12 +90,27 @@ export default {
 *{
   font-family: "Quicksand", sans-serif;
 }
+ 
+.color {
+background-color: #a7dbd8;
+}
+
+
+
+#login { 
+  background-color: #a7dbd8;
+  zoom: 2; 
+    -moz-transform: scale(0); 
+    -moz-transform-origin: 0 0;
+    overflow: hidden;
+    }
 
 input {
   border: 0px;
  border-radius: 5px;
  text-align: center;
  align-self: center;
+ 
 }
 
 button{
@@ -114,6 +131,7 @@ form{
   padding-bottom: 50px;
   border-radius: 10px;
   text-align: center;
+   background-color: #a7dbd8;
 }
 section{
   flex-direction: column;
