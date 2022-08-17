@@ -6,7 +6,6 @@ INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpUL
 
 
 
-/*
 INSERT INTO keyword (keyword_id, keyword_description)
 VALUES 
 (1, 'OOP'),
@@ -166,7 +165,7 @@ VALUES
     	, 'This ensures that there''s one central repository of data that''s always up to date. It''s so common that Vue has special features built in to accommodate it. The most common technology used to solve this in Vue is called Vuex.'
     	, 'https://v2-4-techelevator-book.netlify.app/content/component-communication.html#component-communication-using-vuex', 'Curriculum'),
     (28, 'https://www.youtube.com/watch?v=juocv4AtrHo&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1&index=8'
-    	, 'In Vue, you have Vue Router, which is the official and recommended routing provider. Vue Router allows you to define a route—for example, ''/'', ''/about'', or ''/contact''—and define the component that you want to load when that route is requested.'
+    	, 'In Vue, you have Vue Router, which is the official and recommended routing provider. Vue Router allows you to define a routeâfor example, ''/'', ''/about'', or ''/contact''âand define the component that you want to load when that route is requested.'
     	, 'https://v2-4-techelevator-book.netlify.app/content/vue-router.html', 'Curriculum'),
     (29, 'https://www.youtube.com/watch?v=SLjjgjp2bAA'
     	, 'Up until now, all of the programming you''ve done has been synchronous. In other words, when you call a function or method, you expect to get the result before the flow of execution moves on to the next line of code.'
@@ -563,7 +562,7 @@ double data type"',
   ),
 (85,
   'https://www.youtube.com/watch?v=Rs2jQuKd-vs',
-	'"Java includes a BigDecimal class for performing high-precision arithmetic which can be used in banking or financial domain based application. This class approximately fit into the same category as the “wrapper�? classes but has some very useful methods. This class has methods that provide analogs for the operations that you perform on primitive types. That is, you can do anything with a BigDecimal that you can with an int or float, it’s just that you must use method calls instead of operators. Also, since there’s more involved, the operations will be slower. You’re exchanging speed for accuracy. BigDecimal is for arbitrary-precision fixed-point numbers; you can use these for accurate monetary calculations. Below Java code explains the concept of accuracy in calculation. One part is doing all calculation using double while another part is having calculation using BigDecimal. The output shows a difference between them."',
+	'"Java includes a BigDecimal class for performing high-precision arithmetic which can be used in banking or financial domain based application. This class approximately fit into the same category as the âwrapperâ? classes but has some very useful methods. This class has methods that provide analogs for the operations that you perform on primitive types. That is, you can do anything with a BigDecimal that you can with an int or float, itâs just that you must use method calls instead of operators. Also, since thereâs more involved, the operations will be slower. Youâre exchanging speed for accuracy. BigDecimal is for arbitrary-precision fixed-point numbers; you can use these for accurate monetary calculations. Below Java code explains the concept of accuracy in calculation. One part is doing all calculation using double while another part is having calculation using BigDecimal. The output shows a difference between them."',
   'https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html',
   'Curriculum'
   ),
@@ -618,7 +617,7 @@ double data type"',
   ),
 (93,
   'https://www.youtube.com/watch?v=6djggrlkHY8',
-	'In Java, there are three kinds of loops which are – the for loop, the while loop, and the do-while loop. All these three loop constructs of Java executes a set of repeated statements as long as a specified condition remains true.',
+	'In Java, there are three kinds of loops which are â the for loop, the while loop, and the do-while loop. All these three loop constructs of Java executes a set of repeated statements as long as a specified condition remains true.',
  'https://www.geeksforgeeks.org/loops-in-java/',
   'Curriculum'
   ),
@@ -1025,7 +1024,7 @@ VALUES
 
 
 
-*/
+
 
 
 COMMIT TRANSACTION;

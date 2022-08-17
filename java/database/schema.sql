@@ -1,10 +1,13 @@
 BEGIN TRANSACTION;
 
+
+
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS keyword_topic;
 DROP TABLE IF EXISTS keyword;
 DROP TABLE IF EXISTS topic;
 DROP TABLE IF EXISTS question;
+
 
 
 CREATE TABLE users (
@@ -54,6 +57,32 @@ CREATE TABLE question (
 
 	CONSTRAINT pk_question PRIMARY KEY (question_id)
 );
+
+
+DROP USER IF EXISTS final_capstone_owner;
+CREATE USER final_capstone_owner LOGIN PASSWORD 'finalcapstone';
+DROP USER IF EXISTS final_capstone_appuser;
+CREATE USER final_capstone_appuser LOGIN PASSWORD 'finalcapstone';
+
+
+GRANT ALL
+ON ALL TABLES IN SCHEMA public
+TO final_capstone_owner;
+
+GRANT ALL
+ON ALL SEQUENCES IN SCHEMA public
+TO final_capstone_owner;
+
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON ALL TABLES IN SCHEMA public
+TO final_capstone_appuser;
+
+GRANT USAGE, SELECT
+ON ALL SEQUENCES IN SCHEMA public
+TO final_capstone_appuser;
+
 
 
 ALTER TABLE public.question
