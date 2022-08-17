@@ -21,8 +21,11 @@
           :class="message.author"
         >
 
-          <p>
-            <span href="message.text">{{ message.text }}</span>
+          <p v-if="message.author == 'client'">
+            <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" /><span >{{ message.text }}</span>
+          </p>
+          <p v-else-if="message.author == 'server'">
+            <img src = "https://static.vecteezy.com/system/resources/previews/002/543/418/large_2x/cute-cat-or-kitten-animal-meow-cartoon-fluffy-pets-exact-collection-illustration-cartoon-meow-cat-vector.jpg"/><span>{{message.text}}</span>
           </p>
 
 
