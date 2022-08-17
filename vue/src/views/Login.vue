@@ -1,13 +1,14 @@
 <template>
 
   <div id="login" class="text-center">
+    <div id="color">
     <form class="form-signin" @submit.prevent="login" id="flex" >
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <div
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      >Invalid Log-in!</div>
       <div
         class="alert alert-success"
         role="alert"
@@ -41,6 +42,7 @@
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       </section>
     </form>
+    </div>
   </div>
 
 </template>
@@ -87,10 +89,14 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 *{
   font-family: "Quicksand", sans-serif;
- 
-
-
 }
+ 
+.color {
+background-color: #a7dbd8;
+}
+
+
+
 #login { 
   background-color: #a7dbd8;
   zoom: 2; 
@@ -125,6 +131,7 @@ form{
   padding-bottom: 50px;
   border-radius: 10px;
   text-align: center;
+   background-color: #a7dbd8;
 }
 section{
   flex-direction: column;

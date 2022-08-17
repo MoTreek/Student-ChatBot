@@ -1,19 +1,7 @@
 <template>
   <div class="idk" >
     <div v-for="job in jobsLimited" v-bind:key="job.id">
-      <!-- <p v-html="job.contents" class="card"></p>
-            <p v-html="job.name"></p>
-            <p v-html="job.type"></p>
-            <p v-html="job.publication_date"></p>
-            <p v-html="job.short_name"></p>
-            <p v-html="job.model_type"></p>
-            <p v-html="job.id"></p>
-            <p v-html="job.locations"></p>
-            <p v-html="job.categories"></p>
-            <p v-html="job.levels"></p>
-            <p v-html="job.tags"></p>
-            <p v-html="job.refs"></p>
-            <p v-html="job.company"></p> -->
+  
         <container  >
                 <div class="card">
                     <p v-html="job.company.name"></p>
@@ -21,11 +9,7 @@
                     <p v-html="job.locations.name"></p>
                     <p>Flexible/Remote</p>
                     <a v-bind:href="job.refs.landing_page">Job Page</a>
-                    <!-- <button class="button" @click="clickCard()" /> -->
                 </div>
-      <!-- <div class="Info" v-if="clickBoolean === true">
-          {{ job.content }}
-        </div> -->
       </container>
     </div>
   </div>
@@ -75,7 +59,7 @@ export default {
   },
   computed: {
     jobsLimited() {
-      return this.jobs.slice(0, 5);
+      return this.jobs.slice(0, 3);
     },
   },
   created() {
@@ -96,7 +80,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 5px solid green;
+
 }
 .info {
   background-color: yellow;
@@ -108,17 +92,19 @@ export default {
   width: 25px;
 }
 .card {
-  color: white;
-  background-color: blue;
-  border: 1px solid black;
-  border-radius: 5px;
- width: 200px;
-    height: 200px;
-  padding: 0px;
-  font-size: 15px;
-  /* flex: 1; */
+  background-color:  #69d2e7;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
-  cursor: pointer;
-  width: 60%;
+  color: white;
+   background-color: red;
+   height: 250px;
+  width: 250px;
+    font-size: 1vw;
+}
+.card:first-child{
+  background-color: #f38630;
+  border: 1px solid #703206;
 }
 </style>
