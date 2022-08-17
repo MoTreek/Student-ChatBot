@@ -20,10 +20,10 @@
         >
 
           <p v-if="message.author == 'client'">
-            <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" /><span >{{ message.text }}</span>
+           <span >{{ message.text }}</span> <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" />
           </p>
           <p v-else-if="message.author == 'server'">
-            <img src = ".\Untitled-Artwork.jpg"/><span>{{message.text}}</span>
+            <img class="Betta" src = ".\Betta.jpg"/><span>{{message.text}}</span>
           </p>
 
 
@@ -520,9 +520,17 @@ this.message = ''
 
   }
   img {
-    width: 27px;
-    height: 19px;
-    padding: 2px; 
+   height: 90px;
+    width: auto;
+    border: 5px solid rgb(136, 167, 204);
+    border-radius: 50px;
+  }
+
+  .Betta{
+    height: 90px;
+    width: auto;
+    border: 5px solid rgb(136, 167, 204);
+    border-radius: 50px;
   }
  
  
