@@ -31,10 +31,11 @@
               
 
         </li>
-      </ul>
-          <div v-show="found"><!-- <div v-if="isVisible === true"> -->
+                 <div v-show="found">
 <job-search-component />
 </div>
+      </ul>
+ 
     </div>
 
  <div class = "buttons" v-if="!clicked">
@@ -119,9 +120,14 @@ showJobs(){
       this.$nextTick(() => {
           this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
         })
+
       if (this.message.toLowerCase().includes("job") || this.message.toLowerCase().includes("jobs") || this.message.toLowerCase().includes("position")) {
         this.found = true;
       }
+      else {
+        this.found = false;
+      }
+
       if (this.message.toLowerCase().includes("help")) {
         this.message = ''
         this.messages.push({

@@ -147,7 +147,7 @@ section{
   width: 100%;
 }
 
-main{
-
+html{
+   background-color: #a7dbd8;
 }
 </style>

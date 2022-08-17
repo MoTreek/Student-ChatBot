@@ -80,7 +80,9 @@ body.background {
 .job{
   font-size: 10px
 }
-
+html{
+   background-color: #a7dbd8;
+}
 
 </style>
 
