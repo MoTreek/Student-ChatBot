@@ -490,7 +490,11 @@ showJobs(){
     border-radius: 9px;
 
   }
-
+  img {
+    width: 27px;
+    height: 19px;
+    padding: 2px; 
+  }
  
  
 
