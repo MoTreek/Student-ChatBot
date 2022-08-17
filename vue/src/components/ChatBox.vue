@@ -42,10 +42,10 @@
                 </button>
                 </div>
 
-                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> Find job postings.
+                <button  v-on:click="onButtonClickInheritance()" @click="clicked = !clicked"> What is inheritance?
                 </button>
 
-                <button  v-on:click="onButtonClick()" @click="clicked = !clicked"> How to write a resume. 
+                <button  v-on:click="onButtonClickWhileLoop()" @click="clicked = !clicked"> What is a while loop? 
                   </button>
 
                   
@@ -255,6 +255,25 @@ showJobs(){
           author: 'server'
         })
         this.button.style.display="none"
+  },
+
+  onButtonClickInheritance(){
+this.message = ''
+        this.messages.push({
+          text: 'Inheritance is a mechanism wherein a new class is derived from an existing class. In Java, classes may inherit or acquire the properties and methods of other classes. A class derived from another class is called a subclass, whereas the class from which a subclass is derived is called a superclass.',
+          author: 'server'
+        })
+        this.button.style.display="none"
+  },
+
+  onButtonClickWhileLoop(){
+    this.message = ''
+        this.messages.push({
+          text: 'The while loop is used to repeat a section of code an unknown number of times until a specific condition is met. ',
+          author: 'server'
+        })
+        this.button.style.display="none"
+    
   },
 
     promptForDisplayChoice() {
