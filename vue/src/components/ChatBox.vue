@@ -22,7 +22,7 @@
         >
 
           <p>
-            <span >{{ message.text }}</span>
+            <span href="message.text">{{ message.text }}</span>
           </p>
 
 
