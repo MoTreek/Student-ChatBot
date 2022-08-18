@@ -2,54 +2,68 @@
 <div class = 'flex'> 
 <div class="row">
   <div class="column">
-    <div class="card">
-      <img src=".\Treek_Headshot (2).jpg" alt="Jane" style="width:100%" height="130px">
+    <div class="DevCard">
+      <img src=".\Treek_Headshot (2).jpg" alt="Mohamed" style="width:auto" height="130px">
       <div class="container">
         <h2>Mohamed Treek</h2>
         <p class="title"> Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <p>Ehhhh he's alright - Mohamed</p>
+        <p> - Seung</p>
+        <p> - Lauren</p>
+        <p> - Kourtney</p>
+        <p>TreekMohamed@gmail.com</p>
+      
+        <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/motreek', '_blank');" >Contact</button></p>
       </div>
     </div>
   </div>
   
 
   <div class="column">
-    <div class="card">
-      <img  src=".\Seung.jpg" style="width:auto" height="130">
+    <div class="DevCard">
+      <img  src=".\Seung.jpg" alt="Seung" style="width:auto" height="130px">
       <div class="container">
         <h2>Seung Kim</h2>
         <p class="title">Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <p>Any company worth their salt, would hire a driven, friendly, and diligent man like Seung. Looking forward to his next endeavors</p>
+        <p> - Seung</p>
+        <p> - Lauren</p>
+        <p> - Kourtney</p>
+        <p>seungkuk36kim@gmail.com</p>
+        
+          <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/s36', '_blank');" >Contact</button></p>
       </div>
     </div>
   </div>
 
   <div class="column">
-    <div class="card">
-      <img src=".\Lauren.jpg" alt="John" style="width:100%">
+    <div class="DevCard">
+      <img src=".\Lauren.jpg" alt="Lauren" style="width:auto" height="130px">
       <div class="container">
         <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <p class="title">Developer</p>
+        <p>Watching someone be both artistically inclined and a masterful programmer is just not fair. I'm glad she was on my team for this capstone - Mohamed</p>
+        <p> - Seung</p>
+        <p> - Lauren</p>
+        <p> - Kourtney</p>
+        <p>Laurensaradav34@gmail.com</p>
+        <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/lauren-davidsonn/', '_blank');" >Contact</button></p>
       </div>
     </div>
   </div>
 
   <div class="column">
-    <div class="card">
-      <img src=".\Kourtney.jpg" alt="John" style="width:100%">
+    <div class="DevCard">
+      <img src=".\Kourtney.jpg" alt="Kourtney" style="width:auto" height="130px">
       <div class="container">
         <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <p class="title">Developer</p>
+        <p>Hardworking doesn't being to describe her - Mohamed</p>
+        <p> - Seung</p>
+        <p> - Lauren</p>
+        <p> - Kourtney</p>
+        <p>Larkkourtney@gmail.com</p>
+          <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/kourtneykl', '_blank');" >Contact</button></p>
       </div>
     </div>
   </div>
@@ -62,9 +76,15 @@
 
 <style >
 
+img {
+  border: 5px solid black;
+  border-radius: 25px;
+  background-color: black;
+}
+
 .row {
     display: flex;
-    border: 50px solid red;
+   
     flex-direction: row;
     justify-content: space-evenly;
 
