@@ -10,7 +10,7 @@
         <p>Ehhhh he's alright - Mohamed</p>
         <p> - Seung</p>
         <p> - Lauren</p>
-        <p> - Kourtney</p>
+        <p> Mohamed is an individual of true vision and talent who will see success wherever he goes! - Kourtney</p>
         <p>TreekMohamed@gmail.com</p>
       
         <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/motreek', '_blank');" >Contact</button></p>
@@ -28,7 +28,7 @@
         <p>Any company worth their salt, would hire a driven, friendly, and diligent man like Seung. Looking forward to his next endeavors</p>
         <p> - Seung</p>
         <p> - Lauren</p>
-        <p> - Kourtney</p>
+        <p> Seung is a supportive teammate who excels at problem-solving! He will be an amazing asset to his future team.- Kourtney</p>
         <p>seungkuk36kim@gmail.com</p>
         
           <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/s36', '_blank');" >Contact</button></p>
@@ -45,7 +45,7 @@
         <p>Watching someone be both artistically inclined and a masterful programmer is just not fair. I'm glad she was on my team for this capstone - Mohamed</p>
         <p> - Seung</p>
         <p> - Lauren</p>
-        <p> - Kourtney</p>
+        <p> Lauren is awesome at creating functioning and aesthetic programs. If you want beautiful code then call her! - Kourtney</p>
         <p>Laurensaradav34@gmail.com</p>
         <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/lauren-davidsonn/', '_blank');" >Contact</button></p>
       </div>
@@ -56,12 +56,12 @@
     <div class="DevCard">
       <img src=".\Kourtney.jpg" alt="Kourtney" style="width:auto" height="130px">
       <div class="container">
-        <h2>John Doe</h2>
+        <h2>Kourtney Lark</h2>
         <p class="title">Developer</p>
         <p>Hardworking doesn't being to describe her - Mohamed</p>
         <p> - Seung</p>
         <p> - Lauren</p>
-        <p> - Kourtney</p>
+        <p> Incredibly greateful to have worked with such an amazing group. We're developers now!- Kourtney</p>
         <p>Larkkourtney@gmail.com</p>
           <p><button class="button" onClick="javascript:window.open('https://www.linkedin.com/in/kourtneykl', '_blank');" >Contact</button></p>
       </div>
