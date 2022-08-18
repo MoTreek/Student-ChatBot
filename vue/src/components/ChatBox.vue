@@ -18,8 +18,10 @@
           :key="idx"
           :class="message.author"
         >
-
-          <p v-if="message.author == 'client'">
+          <p v-if="message.author == 'link'">
+            <img class="Betta" src = ".\Betta.jpg"/><span><a :href='message.text' target="_blank" rel="noopener noreferrer"> {{message.text}}</a></span>
+          </p>
+          <p v-else-if="message.author == 'client'">
            <span >{{ message.text }}</span> <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" />
           </p>
           <p v-else-if="message.author == 'server'">
@@ -123,6 +125,7 @@ showJobs(){
 
       if (this.message.toLowerCase().includes("job") || this.message.toLowerCase().includes("jobs") || this.message.toLowerCase().includes("position")) {
         this.found = true;
+        this.message = '';
       }
       else {
         this.found = false;
@@ -149,9 +152,13 @@ showJobs(){
         text: this.questionObject.theQuestion,
         author: 'server'
         })
-          
+        this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+        this.message = ''  ;  
       
         })
+        
         } 
         else if (this.message.toLowerCase().includes("pathway")) {
            ChatBotService.getQuestionPathway().then(response => {
@@ -164,10 +171,14 @@ showJobs(){
         text: this.questionObject.theQuestion,
         author: 'server'
         })
+        this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+        this.message = ''  ;
           
         })
            }
-
+        this.message = ''
 
 
            
@@ -177,6 +188,10 @@ showJobs(){
             text: this.questionObject.questionAnswer,
             author: 'server'
             })
+        this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+      this.message = ''  ;
       }else if (this.message.toLowerCase().includes("video")){
         this.selectDisplayChoice(this.dif, "video")
       } else if (this.message.toLowerCase().includes("text") || this.message.toLowerCase().includes("description")) {
@@ -236,7 +251,7 @@ showJobs(){
           author: 'server'
       })
       }
-      this.message = ''  ;  
+       
       
       //this.message = ''
       //this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${message}`)
@@ -305,8 +320,12 @@ this.message = ''
       
         this.messages.push({
         text: response.data,
-        author: 'server'
+        author: 'link'
       })
+      this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+      this.message = ''  ;
         })
       } else if (type == 'text') {
         ChatBotService.getTextRef(keyword).then(response => {
@@ -315,14 +334,21 @@ this.message = ''
         text: response.data,
         author: 'server'
       })
+      this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+        this.message = ''  ;
         })
       } else if (type == 'web') {
         ChatBotService.getWebRef(keyword).then(response => {
-        
         this.messages.push({
         text: response.data,
-        author: 'server'
+        author: 'link'
       })
+      this.$nextTick(() => {
+          this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
+        })
+      this.message = ''  ;
         })
       }
   }
@@ -532,7 +558,21 @@ this.message = ''
     border: 5px solid rgb(136, 167, 204);
     border-radius: 50px;
   }
- 
+  
+  .chat-box-list .link p span {
+      background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
+      font-size: 18px;
+      border-radius: 10px;
+      /* box-shadow:
+    0 0 60px 10px rgba(255, 255, 255, 0.226),  
+    0 0 100px 10px rgba(255, 0, 255, 0.295), 
+    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
+    }
+    
+  .chat-box-list .link p {
+      display: flex;
+      float: left;
+    }
  
 
 </style>

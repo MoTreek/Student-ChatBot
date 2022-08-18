@@ -8,7 +8,7 @@
                     <p v-html="job.name"></p>
                     <p v-html="job.locations.name"></p>
                     <p>Flexible/Remote</p>
-                    <a v-bind:href="job.refs.landing_page">Job Page</a>
+                    <a v-bind:href="job.refs.landing_page" target="_blank" rel="noopener noreferrer">Job Page</a>
                 </div>
       </container>
     </div>
