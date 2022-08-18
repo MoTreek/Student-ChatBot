@@ -43,10 +43,12 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
+
 h1 {
   color: white;
-  
+  background-color: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
 }
+  
 
 html{
   background-color: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));

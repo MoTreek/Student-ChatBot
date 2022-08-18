@@ -146,12 +146,14 @@ html{
 
     
 form{
-  background-color:  #69d2e7;
+  background-color:  #69d2e76b;
   padding: 20px;
   padding-bottom: 50px;
   border-radius: 10px;
   text-align: center;
 }
+
+
 section{
   flex-direction: column;
   padding-top: 10px;

@@ -132,7 +132,8 @@ button{
    
 }
 form{
-  background-color:  #69d2e7;
+  color: white;
+  background-color:  #69d2e763;
   padding: 20px;
   padding-bottom: 50px;
   border-radius: 10px;
@@ -148,6 +149,6 @@ section{
 }
 
 html{
-   background-color: #a7dbd8;
+   background-color: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
 }
 </style>

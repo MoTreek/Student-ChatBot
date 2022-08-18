@@ -19,13 +19,13 @@
           :class="message.author"
         >
           <p v-if="message.author == 'link'">
-            <img class="Betta" src = ".\Betta.jpg"/><span><a :href='message.text' target="_blank" rel="noopener noreferrer"> {{message.text}}</a></span>
+            <img class="Betta" src = ".\logo4.png"/><span><a :href='message.text' target="_blank" rel="noopener noreferrer"> {{message.text}}</a></span>
           </p>
           <p v-else-if="message.author == 'client'">
            <span >{{ message.text }}</span> <img class="UserImage" src=".\Landscape.png" />
           </p>
           <p v-else-if="message.author == 'server'">
-            <img class="Betta" src = ".\Betta.jpg"/><span>{{message.text}}</span>
+            <img class="Betta" src = ".\logo4.png"/><span>{{message.text}}</span>
           </p>
 
 
@@ -415,26 +415,31 @@ this.message = ''
   }
   
 .chat-box-list .server p span {
-      /* background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216)); */
-      font-size: 18px;
+      background: linear-gradient(rgb(0, 195, 255), rgba(74, 152, 216, 0.753)); 
+      font-size: 19px;
       border-radius: 10px;
+      padding-top: 30px;
+      padding-left: 25px;
+      padding-right: 25px;
     }
     
   .chat-box-list .server p {
       display: flex;
       float: left;
+      
     }
   
   .chat-box-list .client p span {
-      background: #0070C8;
-      font-size: 18px;
+      background: linear-gradient(rgb(1, 99, 129), rgba(74, 152, 216, 0.753));
+      font-size: 19px;
       border-radius: 10px;
-         
+     padding-top: 30px;
     }
 
     .chat-box-list .client p {
       display: flex;
       float: right;
+     
     }
 
     
@@ -479,9 +484,8 @@ this.message = ''
 
 .chat-box {
   margin: 10px;
-
-  width: 70vw;
-  height: 70vh;
+  width: 80vw;
+  height: 79vh;
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
@@ -514,7 +518,7 @@ this.message = ''
 
   .chat-inputs button {
     width: 145px;
-    color: rgb(119, 103, 103); 
+    color: rgb(255, 255, 255); 
     background: linear-gradient(rgb(169, 196, 230), rgb(111, 128, 173));
     border-color: rgba(243, 242, 242, 0.692);
     border-bottom: none;
@@ -549,10 +553,11 @@ this.message = ''
 
 
   .Betta{
-    height: 75px;
+    height: 85px;
     width: auto;
-    border: 5px solid rgb(136, 167, 204);
-    border-radius: 50px;
+    margin: 10px;
+    /* border: 5px solid rgb(136, 167, 204); */
+    /* border-radius: 50px; */
   }
 
   .UserImage{

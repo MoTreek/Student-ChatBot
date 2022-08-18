@@ -104,7 +104,7 @@ export default {
     font-size: 1vw;
 }
 .card:first-child{
-  background-color: #f38630;
-  border: 1px solid #703206;
+  background-color: #f3853096;
+  /* border: 1px solid #703206; */
 }
 </style>
