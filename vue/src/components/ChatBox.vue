@@ -210,15 +210,21 @@ showJobs(){
         let arr = this.message.toLowerCase().replace(/[.,/#!$%^?&*;:{}=\-_`~()]/g,"")
 .split(' ');
         let isFound = false;
-        for (let i = 0; i < arr.length; i++) {
-          const match = keywordArr.find(element => {
+        for (let i = 0; i < arr.length && !isFound; i++) {
+          for(let j = 0; j < keywordArr.length && !isFound; j++) {
+            if (keywordArr[j].split(' ').includes(arr[i])) {
+              isFound = true;
+              break;
+            }
+          }
+          const match = isFound/*= keywordArr.find(element => {
             if (element.includes(arr[i])) {
               return true;
             }
             else {
               return false;
             }
-          })
+          })*/
           if(match){
         this.promptForDisplayChoice()
         // this.readUserInput()
