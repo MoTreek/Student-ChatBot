@@ -33,9 +33,9 @@ export default {
 
   components: {
     QuoteComponent,
-    // HelpComponent,
+    
     ChatBox,
-    // JobSearchComponent,
+ 
   },
 };
 </script>
@@ -48,22 +48,16 @@ h1 {
   
 }
 
-
-body.background {
-  background-color: #69d2e7;
+html{
+  background-color: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
 }
+
 .home {
   font-family: "Quicksand", sans-serif;
   color: #69d2e7;
   background-color: #f0e6de;
 }
-/* .Main {
-   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: linear-gradient(#dcf0ef, rgb(213, 214, 216)); 
-} */
+
   
   .MainBox {
   background-image: linear-gradient(#A7DBD8, rgb(95, 136, 182)); 
@@ -80,9 +74,7 @@ body.background {
 .job{
   font-size: 10px
 }
-html{
-   background-color: #a7dbd8;
-}
+
 
 </style>
 

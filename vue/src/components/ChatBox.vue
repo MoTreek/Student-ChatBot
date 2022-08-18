@@ -22,7 +22,7 @@
             <img class="Betta" src = ".\Betta.jpg"/><span><a :href='message.text' target="_blank" rel="noopener noreferrer"> {{message.text}}</a></span>
           </p>
           <p v-else-if="message.author == 'client'">
-           <span >{{ message.text }}</span> <img src="https://htc-wallpaper.com/wp-content/uploads/2014/08/Small-bird.jpg" />
+           <span >{{ message.text }}</span> <img class="UserImage" src=".\Landscape.png" />
           </p>
           <p v-else-if="message.author == 'server'">
             <img class="Betta" src = ".\Betta.jpg"/><span>{{message.text}}</span>
@@ -388,6 +388,10 @@ this.message = ''
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 
+ html {
+      background-color: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
+    }
+
 .chat-box,
 .chat-box-list {
   display: flex;
@@ -411,13 +415,9 @@ this.message = ''
   }
   
 .chat-box-list .server p span {
-      background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
+      /* background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216)); */
       font-size: 18px;
       border-radius: 10px;
-      /* box-shadow:
-    0 0 60px 10px rgba(255, 255, 255, 0.226),  
-    0 0 100px 10px rgba(255, 0, 255, 0.295), 
-    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
     }
     
   .chat-box-list .server p {
@@ -440,11 +440,11 @@ this.message = ''
     
     .DivToScroll{   
     background-color: #f5f5f51f;
-    /* border: 1px solid #DDDDDD; */
+    
     border-radius: 4px 0 4px 0;
     color: #3B3C3E;
     font-size: 12px;
-    /* font-weight: bold; */
+   
     left: -1px;
     padding: 10px 7px 5px;
     border-radius: 10px;
@@ -473,19 +473,14 @@ this.message = ''
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.459); 
 }
-/* 
-.DivWithScroll{
-    height:120px;
-    overflow:scroll;
-    overflow-x:hidden;
-} */
+
     
   
 
 .chat-box {
   margin: 10px;
-  /* border: 1px solid #999; */
-  width: 60vw;
+
+  width: 70vw;
   height: 70vh;
   border-radius: 4px;
   margin-left: auto;
@@ -541,7 +536,7 @@ this.message = ''
   }
 
   .buttons button {
-    /* background: linear-gradient(rgb(255, 244, 221), rgb(247, 191, 88)); */
+  
     color: black;
     border: 2px solid rgb(230, 174, 110);
     font-size: 18px;
@@ -551,34 +546,34 @@ this.message = ''
     border-radius: 9px;
 
   }
-  img {
-   height: 90px;
+
+
+  .Betta{
+    height: 75px;
     width: auto;
     border: 5px solid rgb(136, 167, 204);
     border-radius: 50px;
   }
 
-  .Betta{
-    height: 90px;
+  .UserImage{
+       height: 120px;
     width: auto;
-    border: 5px solid rgb(136, 167, 204);
-    border-radius: 50px;
+   
   }
   
   .chat-box-list .link p span {
       background: linear-gradient(rgb(0, 195, 255), rgb(74, 152, 216));
       font-size: 18px;
       border-radius: 10px;
-      /* box-shadow:
-    0 0 60px 10px rgba(255, 255, 255, 0.226),  
-    0 0 100px 10px rgba(255, 0, 255, 0.295), 
-    0 0 140px 60px rgba(0, 255, 255, 0.377);    */
+   
     }
     
   .chat-box-list .link p {
       display: flex;
       float: left;
     }
+
+   
  
 
 </style>

@@ -11,9 +11,7 @@
 
 <style scoped>
 
-*{
-  border: 0px solid red;
-}
+
 #app{
   text-align: center;
   margin-bottom: 1px;
