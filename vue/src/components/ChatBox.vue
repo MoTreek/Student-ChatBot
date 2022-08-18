@@ -122,16 +122,12 @@ showJobs(){
       this.$nextTick(() => {
           this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight
         })
-
+    this.found = false;
       if (this.message.toLowerCase().includes("job") || this.message.toLowerCase().includes("jobs") || this.message.toLowerCase().includes("position")) {
         this.found = true;
         this.message = '';
       }
-      else {
-        this.found = false;
-      }
-
-      if (this.message.toLowerCase().includes("help")) {
+      else if (this.message.toLowerCase().includes("help")) {
         this.message = ''
         this.messages.push({
           text: "Hello, " + this.$store.state.user.username + " This is how you use me! Enter a command and I will provide help",
